@@ -5,7 +5,7 @@ import edu.depaul.se.worker.*;
 import javax.persistence.*;
 
 @Entity
-public class Worker implements Serializable, iWorker{
+public class Worker implements Serializable, IWorker{
  
 	private static final long serialVersionUID = 1L;
 	@Id

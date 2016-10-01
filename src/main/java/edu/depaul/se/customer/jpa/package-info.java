@@ -5,4 +5,4 @@
  * @author steven
  *
  */
-package edu.depaul.se.worker.test;
+package edu.depaul.se.customer.jpa;

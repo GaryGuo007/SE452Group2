@@ -1,4 +1,4 @@
-package edu.depaul.se.worker.test;
+package edu.depaul.se.worker.jpa;
 
 import org.bson.Document;
 
@@ -12,15 +12,13 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class WorkerService implements IWorkerService {
-	//private static final MongoClient c = new MongoClient();
-	//private static final MongoCollection<Document> DB = c.getDatabase("se452").getCollection("workers");
 	private EntityManager em;
 
 	public WorkerService() {
 		em = Persistence.createEntityManagerFactory("jpa-worker").createEntityManager();
 	}
 	@Override
-	public void saveWorker(iWorker worker) {
+	public void saveWorker(IWorker worker) {
 		EntityTransaction tx = em.getTransaction();
 		
 		tx.begin();
@@ -28,10 +26,5 @@ public class WorkerService implements IWorkerService {
 		tx.commit();
 		
 	}
-	
-//	@Override
-//	public void saveWorker(iWorker worker) {
-//		DB.insertOne(new Document().append("name", "frd"));
-//	}
 
 }
