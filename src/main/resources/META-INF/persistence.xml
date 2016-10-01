@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-  <persistence-unit name="profile" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>edu.se452.profile</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <!-- Change to use the real database
+  <persistence-unit name="jpa-worker" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<!--    <class>edu.depaul.se.worker.jpa.Worker</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+
     <properties>
-      <property name="eclipselink.logging.level" value="FINEST"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
-      <property name="javax.persistence.jdbc.user" value="SA"/>
-      <property name="javax.persistence.jdbc.password" value="SA"/>
-      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+      <property name="hibernate.ogm.datastore.provider" value="mongodb"/>
+      <property name="hibernate.ogm.datastore.database" value="se452"/>
+      <property name="hibernate.ogm.datastore.host" value="localhost"/>
+      <property name="hibernate.ogm.datastore.username" value="" />
+      <property name="hibernate.ogm.datastore.password" value="" />
     </properties>
-    -->
-    <properties>
+    
+   <!-- <properties>
       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:SE452"/>
       <property name="javax.persistence.jdbc.user" value=""/>
       <property name="javax.persistence.jdbc.password" value=""/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-    </properties>
+    </properties> -->
   </persistence-unit>
 </persistence>
