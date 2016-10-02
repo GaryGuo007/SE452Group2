@@ -12,7 +12,7 @@ public class TransactionService implements ITransactionService {
 	private EntityManager em;
 	
 	public TransactionService() {
-		em = Persistence.createEntityManagerFactory("jpa-transaction").createEntityManager();
+		em = Persistence.createEntityManagerFactory("jpa-mongodb").createEntityManager();
 	}
 	
 	@Override

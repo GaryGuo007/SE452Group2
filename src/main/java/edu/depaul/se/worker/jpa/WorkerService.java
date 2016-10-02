@@ -15,7 +15,7 @@ public class WorkerService implements IWorkerService {
 	private EntityManager em;
 
 	public WorkerService() {
-		em = Persistence.createEntityManagerFactory("jpa-worker").createEntityManager();
+		em = Persistence.createEntityManagerFactory("jpa-mongodb").createEntityManager();
 	}
 	@Override
 	public void saveWorker(IWorker worker) {

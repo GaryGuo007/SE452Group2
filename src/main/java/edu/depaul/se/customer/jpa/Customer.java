@@ -6,12 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 
 import edu.depaul.se.customer.ICustomer;
 
 @Entity
-@NamedQuery(name = "findCustomer", query = "select name from Customer")
 public class Customer implements ICustomer, Serializable {
 
 	/**

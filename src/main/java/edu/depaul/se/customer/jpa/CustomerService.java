@@ -15,7 +15,7 @@ public class CustomerService implements ICustomerService {
 	private EntityManager em;
 	
 	public CustomerService() {
-		em = Persistence.createEntityManagerFactory("jpa-customer").createEntityManager();
+		em = Persistence.createEntityManagerFactory("jpa-mongodb").createEntityManager();
 	}
 
 	@Override

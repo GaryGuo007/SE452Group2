@@ -11,6 +11,10 @@ public class Worker implements Serializable, IWorker{
 	@Id
 	private String name;
 	
+	public Worker(){
+		
+	}
+	
 	public Worker(String name) {
 		this.name = name;
 	}
