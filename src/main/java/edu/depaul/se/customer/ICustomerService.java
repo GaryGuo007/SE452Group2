@@ -4,5 +4,5 @@ public interface ICustomerService {
 
 	public void saveCustomer(ICustomer cust);
 	public ICustomer getCustomer(String name);
-	public ICustomer getCustomer(Long id);
+	public ICustomer getCustomerInfo(String id);
 }

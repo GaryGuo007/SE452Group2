@@ -34,13 +34,23 @@ public class CustomerService implements ICustomerService {
 		TypedQuery<Customer> q = em.createQuery("select c from Customer c where c.name = :name", Customer.class);
 		List<Customer> c1 = q.setParameter("name", name).getResultList();
 		Customer c = c1.get(0);
-		return getCustomer(1L);
+		String cID= c.getId();
+		ICustomer C = em.find(Customer.class, cID);
+		return C;
+		
+		//return getCustomer(1L);
 	}
 
 	@Override
-	public ICustomer getCustomer(Long id) {
+	public ICustomer getCustomerInfo(String id) {
 		return em.find(Customer.class, id);
 	}
+	
+	public String getName(ICustomer c){
+		return c.toString();
+	}
+	
+	
 	
 	
 	

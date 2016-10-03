@@ -7,10 +7,9 @@
       <property name="hibernate.ogm.datastore.provider" value="mongodb"/>
       <property name="hibernate.ogm.datastore.database" value="se452"/>
       <property name="hibernate.ogm.datastore.host" value="localhost"/>
+      <property name="hibernate.ogm.datastore.create_database" value="true"/>
       <property name="hibernate.ogm.datastore.username" value="" />
       <property name="hibernate.ogm.datastore.password" value="" />
-      <property name="hibernate.ogm.datastore.create_database" value="true" />
-      
     </properties>   
   </persistence-unit>
 </persistence>
