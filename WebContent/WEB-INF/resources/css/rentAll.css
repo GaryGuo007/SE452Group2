@@ -1,0 +1,249 @@
+/*!
+ * Start Bootstrap - Modern Business (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+/* Global Styles */
+
+
+html,
+body {
+    height: 100%;
+	margin:0px;
+	
+}
+html{
+	height: 100%;
+}
+body {
+padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+background: #484749; /* Old browsers */
+background: -moz-linear-gradient(left, #484749 0%, #8c8a8f 50%, #484749 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #484749 0%,#8c8a8f 50%,#484749 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #484749 0%,#8c8a8f 50%,#484749 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+
+
+}
+
+#header_title{
+	color: #5C832F;
+	font-size: 28px;
+	font-weight: 700;
+	font-family: 'Bungee', cursive;
+}
+.tagline{
+	font-size:12px;
+	color:#ccc;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.header_nav{
+	background-color:#1a1a1a;
+	color:gray;
+	-webkit-box-shadow: 0px 2px 1px 0px rgba(138,138,138,1);
+-moz-box-shadow: 0px 2px 1px 0px rgba(138,138,138,1);
+box-shadow: 0px 2px 1px 0px rgba(138,138,138,1);
+}
+.header_nav>li>a{
+	color:gray;
+}
+
+
+
+.custom_nav>li>a:hover{
+	background-color:#5C832F;
+	color:white;
+}
+.dropdown-menu > li > a:hover {
+    background-color:#5C832F;
+	color:white;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+	background-color:#5C832F;
+	color:white;
+}
+
+.get_started{
+	color: 	 #e6e6e6;
+}
+
+
+/* Home Page Carousel */
+
+.carousel {
+    height: 50%;
+
+}
+
+.carousel .item.active,
+.carousel .carousel-inner {
+    height: 450px;
+}
+
+.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.custom_panel{
+	background-color:#eee !important;
+}
+
+.custom_btn{
+	
+	background-color:#5C832F;
+	color:white;
+	
+}
+.custom_btn:hover{
+	background-color:  #1a250e;
+	color:white;
+}
+
+.custom_carousel{
+	-webkit-box-shadow: 0px 2px 2px 0px rgba(32,54,06,1);
+-moz-box-shadow: 0px 2px 2px 0px rgba(32,54,06,1);
+box-shadow: 0px 2px 2px 0px rgba(32,54,06,1);
+}
+
+.info_box{
+	border-style: solid;
+    border-width: 2px;
+-webkit-box-shadow: 0px 2px 2px 0px rgba(52,74,26,1);
+-moz-box-shadow: 0px 2px 2px 0px rgba(52,74,26,1);
+box-shadow: 0px 2px 2px 0px rgba(52,74,26,1);
+
+}
+
+
+
+.custom_login{
+	height: 100%;
+	width: 50%;
+
+}
+
+.about_header{
+	text-align:center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color:rgba(255,255,255,.7);
+	margin-top: 50px;
+	margin-bottom:50px;
+	border-style:solid;
+	border-color:#ccc;
+	border-width:2px;
+}
+
+
+.custom_panel{
+	background-color:#ccc;
+}
+
+
+
+/* Footer Styles */
+
+.login_bg{
+	background-color:rgba(255,255,255,.5);
+	border-width: 2px;
+	border-style:solid;
+	border-color:#ccc;
+	  min-width: 200px;
+	max-width: 400px;
+	
+
+}
+
+.footer {
+  background-color: #1a1a1a;
+  text-align:center;
+  width: 100%;
+}
+
+.footer,
+.push {
+  height: 50px;
+  
+}
+
+
+.content{
+	padding: 20px;
+    min-height: 100%;
+    margin: 0 auto -10px;
+}
+
+
+
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+  width: 50%; 
+  height: 50%;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 40px;
+}
+
+#logo-container{
+  margin: auto;
+  margin-bottom: 10px;
+  width:200px;
+  height:30px;
+  background-image:url('http://placehold.it/200x30/000000/ffffff/&text=BRAND+LOGO');
+}
+
+hr {
+    display: block;
+	border:1px solid #ddd;
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+
+
+
+
+/* Responsive Styles */
+
+
+
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+
+
+}
+
+@media(max-width:400px){
+	/*.carousel-inner{
+	height: 500px !important;
+	width: 275%;
+	}*/
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    /*header.carousel .carousel {
+        height: 70%;
+    }*/
+}
+
+a{
+	text-decoration:none;
+	color:#ccc;
+}
