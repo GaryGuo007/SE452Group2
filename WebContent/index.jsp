@@ -29,7 +29,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" id="header_title" href="/Se452Group2/">Rent ALL<small class="tagline"> &nbsp&nbsp&nbsp&nbsp Find your Handyman! </small></a>
+                <a class="navbar-brand" id="header_title" href="/Se452Group2/">Rent ALL<small class="tagline"> &nbsp;&nbsp;&nbsp;&nbsp; Find your Handyman! </small></a>
             </div>
 			<div></div>
             <!-- Collect the nav links, forms, and other content for toggling -->
