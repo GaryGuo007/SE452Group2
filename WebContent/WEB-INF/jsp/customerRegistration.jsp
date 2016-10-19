@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -74,7 +75,7 @@
                         <h2><i class="fa fa-fw fa-compass"></i>Customer Registration</h2>
                     </div>
                     <div class="panel-body" style="padding:35px;">
-						<form role="form" action="" method="post" class="registration-form">
+						<form:form role="form" action="addCustomer.html" method="post" class="registration-form">
                         		
                         		<fieldset>
 		             		          <div class="form-bottom">
@@ -162,11 +163,12 @@
 				                     
 				                        	<input type="password" name="form-password" placeholder="Password..." class="form-control">
 				                        </div>	
-				                      				                        
+		                                    <input type="submit" class="btn btn-default custom_btn">
+         		                      				                        
 				                    </div>
 			                    </fieldset>
-							</form>
-                        <a href="index.html" class="btn btn-default custom_btn">Register</a>
+							</form:form>
+                        <!--<a href="index.html" class="btn btn-default custom_btn">Register</a> -->
                     </div>
                 </div>
 			</div>
