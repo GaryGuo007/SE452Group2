@@ -1,12 +1,6 @@
 package edu.depaul.se.worker.jpa;
 
-import org.bson.Document;
 
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-
-import edu.depaul.se.customer.ICustomer;
-import edu.depaul.se.customer.jpa.Customer;
 import edu.depaul.se.worker.*;
 
 import java.util.List;

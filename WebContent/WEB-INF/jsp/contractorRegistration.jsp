@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" id="header_title" href="/Se452Group2/">Rent ALL<small class="tagline"> &nbsp&nbsp&nbsp&nbsp Find your handyman! </small></a>
+                <a class="navbar-brand" id="header_title" href="/Se452Group2/">Rent ALL<small class="tagline"> &nbsp;&nbsp;&nbsp;&nbsp; Find your handyman! </small></a>
             </div>
 			<div></div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,28 +76,29 @@
                         <h2><i class="fa fa-fw fa-compass"></i>Contractor Registration</h2>
                     </div>
                     <div class="panel-body" style="padding:35px;">
-						<form role="form" action="" method="post" class="registration-form">
+						<form:form role="form" action="addContractor.html" method="post" class="registration-form">
                         		
                         		<fieldset>
 		             		          <div class="form-bottom">
 				                    	<div class="form-group">
 				                    		
-				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-control">
+				                        	<form:input path="firstName" type="text" name="firstName" placeholder="First name..." class="form-control"></form:input>
+				                        	
 				                        </div>
 				                        <div class="form-group">
 				                        	
-				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-control">
+				                        	<input type="text" name="lastName" placeholder="Last name..." class="form-control">
 				                        </div>
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="form-address" placeholder="Address..." class="form-control">
+				                        	<input type="text" name="address" placeholder="Address..." class="form-control">
 				                        </div>
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="form-city" placeholder="City..." class="form-control">
+				                        	<input type="text" name="city" placeholder="City..." class="form-control">
 				                        </div>
 										<div class="form-group">
-				                    		<select class="form-control" id="state" name="state" placeholder="City...">
+				                    		<select class="form-control" id="state" name="state" >
 												<option value="AK">Alaska</option>
 												<option value="AL">Alabama</option>
 												<option value="AR">Arkansas</option>
@@ -153,28 +155,30 @@
 				                        </div>
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="form-zip" placeholder="Zipcode..." class="form-control">
+				                        	<input type="text" name="zip" placeholder="Zipcode..." class="form-control">
 				                        </div>					
 										<div class="form-group">
 				                     
-				                        	<input type="cost" name="form-cost" placeholder="Cost per Hour..." class="form-control">
+				                        	<form:input type="text" path="cost" name="cost" placeholder="Cost per Hour..." class="form-control"></form:input>
 				                        </div>											
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-control">
+				                        	<input type="text" name="email" placeholder="Email..." class="form-control">
 				                        </div>	
 										<div class="form-group">
 				                     
-				                        	<input type="password" name="form-password" placeholder="Password..." class="form-control">
+				                        	<input type="password" name="password" placeholder="Password..." class="form-control">
 				                        </div>	
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-				                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
+				                        	<textarea name="skill" placeholder="About yourself..." 
 				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
 				                        </div>
+				                        <input type="submit" class="btn btn-default custom_btn" >
 										</div>
-										</form>
-                        <a href="index.html" class="btn btn-default custom_btn">Register</a>
+										</fieldset>
+										</form:form>
+                        <!-- <a href="index.html" class="btn btn-default custom_btn">Register</a> -->
                     </div>
                 </div>
 			</div>
@@ -187,7 +191,7 @@
         <footer class="footer">
 			<div class="container">
 				<p style="margin:15px; color:#ccc">Copyright &copy; 2016</p>
-			<div>
+			</div>
 		</footer>
 		
 		<!-- jQuery -->

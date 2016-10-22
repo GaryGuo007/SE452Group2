@@ -1,4 +1,4 @@
-package edu.depaul.se.worker.jpa;
+package edu.depaul.se.worker;
 
 import java.io.Serializable;
 import edu.depaul.se.worker.*;
@@ -35,10 +35,10 @@ public class Worker implements Serializable, IWorker{
 	private String lastName;
 	
 	public String getLastName() {
-		return firstName;
+		return lastName;
 	}
 	public void setLastName(String name) {
-		this.firstName = name;
+		this.lastName = name;
 	}
 	
 	
@@ -116,7 +116,15 @@ public class Worker implements Serializable, IWorker{
 		return cost;
 	}
 	
+	public void setCost(String cost){
+		System.out.println("in setCost looking at " + cost);
+		try {
+			Long l = Long.decode(cost);
+		    setCost(l);
+		} catch (NumberFormatException ne ){ ne.printStackTrace();}
+	}
 	public void setCost(Long cost){
+		System.out.println("in set cost long with " + cost);
 		this.cost = cost;
 	}
 	
@@ -148,6 +156,21 @@ public class Worker implements Serializable, IWorker{
 		this.skill = skill;
 		this.cost = cost;
 		this.password = password;
+	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.firstName ).append(", ");
+		sb.append(this.lastName ).append(", ");
+		sb.append(this.city ).append(", ");
+		sb.append(this.state ).append(", ");
+		sb.append(this.zip ).append(", ");
+		sb.append(this.email ).append(", ");
+		sb.append(this.phone ).append(", ");
+		sb.append(this.skill ).append(", ");
+		sb.append(this.cost ).append(", ");
+		sb.append(this.password );
+		return sb.toString();
 	}
 	
 }

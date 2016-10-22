@@ -1,5 +1,6 @@
 package test.java;
 
+import edu.depaul.se.worker.Worker;
 import edu.depaul.se.worker.jpa.*;
 
 

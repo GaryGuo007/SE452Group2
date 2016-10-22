@@ -11,13 +11,11 @@
         </servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
-  
-  
   <servlet-mapping>
     <servlet-name>springMVC</servlet-name>
        <url-pattern>/about.jsp</url-pattern>
         <url-pattern>/about.html</url-pattern>
         <url-pattern>*.html</url-pattern>
-        <url-pattern>/addCustomer</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>
