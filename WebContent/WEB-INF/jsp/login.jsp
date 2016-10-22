@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,6 +61,11 @@
 					 <li>
                         <a href="login.html">Login</a>
                     </li>
+                     <li>
+                    Hello There
+                    <c:out value="${session.getName()}"></c:out>
+                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -81,16 +88,16 @@
                         <div class="login-container">
                 <div class="login-card">
                     <div class="login-form">
-                        <form method="post" class="form-horizontal">
+                        <form:form action="performLogin" method="post" class="form-horizontal">
 							<br>
                             <div class="input-group input-sm">
                                 <label class="input-group-addon" for="username"><i class="fa fa-user"></i></label>
-                                <input type="text" class="form-control" id="username" name="ssoId" placeholder="Enter Username" required>
+                                <form:input path="name" type="text" class="form-control" id="username" name="ssoId" placeholder="Enter Username" ></form:input>
                             </div>
 							<br>
                             <div class="input-group input-sm">
                                 <label class="input-group-addon" for="password"><i class="fa fa-lock"></i></label> 
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                                <form:input path="password" type="password" class="form-control" id="password"  name="password" placeholder="Enter Password" ></form:input>
                             </div>
                             <br>
                                  
@@ -98,7 +105,7 @@
                                 <input type="submit"
                                     class="btn btn-default custom_btn" value="Log in">
                             </div>
-                        </form>
+                        </form:form>
                     </div>
                 </div>
             </div>

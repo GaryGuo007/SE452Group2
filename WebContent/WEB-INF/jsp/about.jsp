@@ -60,6 +60,10 @@
 					 <li>
                         <a href="login.html">Login</a>
                     </li>
+                    <li>
+                    Hello There
+                    </li>
+             
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

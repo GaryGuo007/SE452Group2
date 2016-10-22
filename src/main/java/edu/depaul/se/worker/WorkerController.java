@@ -23,7 +23,7 @@ public class WorkerController {
 		model.addAttribute("lname", worker.getLastName());
 		model.addAttribute("fname", worker.getFirstName());
 		System.out.println("DEBUG: Worker " + worker);
-		WorkerService ws = new WorkerService();
+		WorkerService ws = new WorkerService(); 
 		ws.saveWorker(worker);
 		return "testPage";
 	}
