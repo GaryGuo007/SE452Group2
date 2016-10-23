@@ -18,57 +18,22 @@
 	<!-- Custom Font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
-	<style type="text/css">
-		body {
-	
-		}
-</style>
-</head>
-<body  style = "font-family: 'Montserrat', sans-serif">
+	 <!-- jQuery -->
+    <script src="javascript/jquery.js"></script>
+	<script src="javascript/customJS.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="javascript/bootstrap.min.js"></script>
+	<script src="javascript/headerLoad.js"></script>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-fixed-top header_nav" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" id="header_title" href="/Se452Group2/">Rent ALL<small class="tagline"> &nbsp&nbsp&nbsp&nbsp Find your handyman! </small></a>
-            </div>
-			<div></div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right custom_nav">
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="search.html">Search</a>
-                    </li>
-                   
-                    <li class="dropdown custom_dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Register<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="contractorRegistration.html">Contractor</a>
-                            </li>
-                            <li>
-                                <a href="customerRegistration.html">Customer</a>
-                            </li>
-                        </ul>
-                    </li>
-					 <li>
-                        <a href="login.html">Login</a>
-                    </li>
-                     <li>
-                    Hello There
-                    <c:out value="${session.getName()}"></c:out>
-                    </li>
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+</head>
+
+<body style = "font-family: 'Montserrat', sans-serif">
+	
+	    <!-- Navigation -->
+	<div id="header"></div>
+	
+
+
 
 
 
@@ -192,10 +157,6 @@
 
    
     <!-- /.container -->
-<!-- jQuery -->
-    <script src="javascript/jquery.js"></script>
-	<script src="javascript/customJS.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="javascript/bootstrap.min.js"></script>
+
 </body>
 </html>
