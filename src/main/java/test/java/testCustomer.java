@@ -1,7 +1,7 @@
 
 package test.java;
+import edu.depaul.se.customer.Customer;
 import edu.depaul.se.customer.ICustomer;
-import edu.depaul.se.customer.jpa.Customer;
 import edu.depaul.se.customer.jpa.CustomerService;
 
 public class testCustomer {

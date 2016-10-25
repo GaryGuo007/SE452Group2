@@ -7,6 +7,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import edu.depaul.se.customer.Customer;
 import edu.depaul.se.customer.ICustomer;
 import edu.depaul.se.customer.ICustomerService;
 
@@ -28,17 +29,15 @@ public class CustomerService implements ICustomerService {
 	}
 
 	@Override
-	public ICustomer getCustomer(String name) {
-		//List<Customer> ol = (List<Customer>)em.createNamedQuery("findCustomer").getResultList();
-		//Object g = ol.get(0) ;
-		TypedQuery<Customer> q = em.createQuery("select c from Customer c where c.name = :name", Customer.class);
-		List<Customer> c1 = q.setParameter("name", name).getResultList();
+	public ICustomer getCustomerByEmail(String email) {
+		TypedQuery<Customer> q = em.createQuery("select c from Customer c where c.email = :email", Customer.class);
+		List<Customer> c1 = q.setParameter("email", email).getResultList();
+		if ( c1.isEmpty() )
+			return null;
 		Customer c = c1.get(0);
 		String cID= c.getId();
 		ICustomer C = em.find(Customer.class, cID);
 		return C;
-		
-		//return getCustomer(1L);
 	}
 
 	@Override

@@ -51,11 +51,11 @@
                         <div class="login-container">
                 <div class="login-card">
                     <div class="login-form">
-                        <form:form action="performLogin" method="post" class="form-horizontal">
+                        <form:form modelAttribute="Login" action="performLogin" method="post" class="form-horizontal">
 							<br>
                             <div class="input-group input-sm">
                                 <label class="input-group-addon" for="username"><i class="fa fa-user"></i></label>
-                                <form:input path="name" type="text" class="form-control" id="username" name="ssoId" placeholder="Enter Username" ></form:input>
+                                <form:input path="email" type="text" class="form-control" id="emailAddress" name="ssoId" placeholder="Enter Email Address" ></form:input>
                             </div>
 							<br>
                             <div class="input-group input-sm">

@@ -46,25 +46,25 @@
                         <h2><i class="fa fa-fw fa-compass"></i>Customer Registration</h2>
                     </div>
                     <div class="panel-body" style="padding:35px;">
-						<form:form role="form" action="addCustomer.html" method="post" class="registration-form">
+						<form:form modelAttribute="Customer" role="form" action="addCustomer.html" method="post" class="registration-form">
                         		
                         		<fieldset>
 		             		          <div class="form-bottom">
 				                    	<div class="form-group">
 				                    		
-				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-control">
+				                        	<form:input path="firstName" type="text" name="form-first-name" placeholder="First name..." class="form-control"></form:input>
 				                        </div>
 				                        <div class="form-group">
 				                        	
-				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-control">
+				                        	<form:input path="lastName" type="text" name="form-last-name" placeholder="Last name..." class="form-control"></form:input>
 				                        </div>
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="form-address" placeholder="Address..." class="form-control">
+				                        	<form:input path="address" type="text" name="form-address" placeholder="Address..." class="form-control"></form:input>
 				                        </div>
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="form-city" placeholder="City..." class="form-control">
+				                        	<form:input path="city" type="text" name="form-city" placeholder="City..." class="form-control"></form:input>
 				                        </div>
 										<div class="form-group">
 				                    		<select class="form-control" id="state" name="state" placeholder="City...">
@@ -124,15 +124,15 @@
 				                        </div>
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="form-zip" placeholder="Zipcode..." class="form-control">
+				                        	<form:input path="zip" type="text" name="form-zip" placeholder="Zipcode..." class="form-control"></form:input>
 				                        </div>									
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-control">
+				                        	<form:input path="email" type="text" name="form-email" placeholder="Email..." class="form-control"></form:input>
 				                        </div>	
 										<div class="form-group">
 				                     
-				                        	<input type="password" name="form-password" placeholder="Password..." class="form-control">
+				                        	<form:input path="password" type="password" name="form-password" placeholder="Password..." class="form-control"></form:input>
 				                        </div>	
 		                                    <input type="submit" class="btn btn-default custom_btn">
          		                      				                        

@@ -7,8 +7,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import edu.depaul.se.customer.Customer;
 import edu.depaul.se.customer.ICustomer;
-import edu.depaul.se.customer.jpa.Customer;
 import edu.depaul.se.transaction.ITransaction;
 import edu.depaul.se.transaction.ITransactionService;
 

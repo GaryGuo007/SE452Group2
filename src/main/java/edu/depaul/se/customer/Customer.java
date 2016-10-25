@@ -1,4 +1,4 @@
-package edu.depaul.se.customer.jpa;
+package edu.depaul.se.customer;
 
 import java.io.Serializable;
 
@@ -8,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
-
-import edu.depaul.se.customer.ICustomer;
 
 @Entity
 public class Customer implements ICustomer, Serializable {
@@ -44,10 +42,10 @@ public class Customer implements ICustomer, Serializable {
 	private String lastName;
 	
 	public String getLastName() {
-		return firstName;
+		return lastName;
 	}
 	public void setLastName(String name) {
-		this.firstName = name;
+		this.lastName = name;
 	}
 	
 	//Address
@@ -133,5 +131,19 @@ public class Customer implements ICustomer, Serializable {
 		this.zip = zip;
 		this.email = email;
 		this.password = password;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.firstName).append(", ");
+		sb.append(this.lastName).append(", ");
+		sb.append(this.address).append(", ");
+		sb.append(this.city).append(", ");
+		sb.append(this.state).append(", ");
+		sb.append(this.zip).append(", ");
+		sb.append(this.email).append(", ");
+		sb.append(this.password);
+		return sb.toString();
 	}
 }

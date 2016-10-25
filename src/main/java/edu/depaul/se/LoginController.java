@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.depaul.se.customer.Customer;
+import edu.depaul.se.customer.jpa.CustomerService;
 import edu.depaul.se.worker.Worker;
 
 @Controller
@@ -20,15 +22,32 @@ public class LoginController {
 	@RequestMapping(value = "/login")
 	public ModelAndView login(){
 		System.out.println("DEBUG: In LoginController ");
-		session.setName("This is a new session object");
 		System.out.println(" session " + session );
-		return new ModelAndView("login", "command", new Login());		
+		return new ModelAndView("login", "Login", new Login());		
 	}
 	
 	@RequestMapping(value="/performLogin")
-	public String performLogin(@ModelAttribute("login")Login login, ModelMap model) {
-		session.setName(login.getName());
-		return "index";
+	public ModelAndView performLogin(@ModelAttribute("login")Login login, ModelMap model) {
+		Customer customer = validateLogin(login);
+		if ( customer == null ) {
+			session.setLoggedIn(false);
+			session.setName("Not Logged In");
+			return new ModelAndView("login", "Login", new Login());
+		}
+		session.setName(customer.getFirstName());
+		return new ModelAndView("index");
+	}
+	
+	private Customer validateLogin(Login login ) {
+		CustomerService cs = new CustomerService();
+		Customer cust = (Customer) cs.getCustomerByEmail(login.getEmail());
+		if ( cust != null ) {
+	   	   if ( login.getPassword().trim() != null && cust.getPassword().equals(login.getPassword())) {
+			   return cust;
+		   }
+		}
+		System.out.println("DEBUG: Did not find login " + login);
+		return null;
 	}
 	
 }

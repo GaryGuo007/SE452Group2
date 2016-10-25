@@ -11,7 +11,7 @@ public class Session {
 	private boolean loggedIn;
 	
 	public Session() {
-		this.name = "";
+		this.name = "Not logged in";
 		this.loggedIn = false;
 	}
 	
