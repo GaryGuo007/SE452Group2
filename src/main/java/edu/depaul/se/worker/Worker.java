@@ -115,16 +115,8 @@ public class Worker implements Serializable, IWorker{
 	public double getCost(){
 		return cost;
 	}
-	
-	public void setCost(String cost){
-		System.out.println("in setCost looking at " + cost);
-		try {
-			Long l = Long.decode(cost);
-		    setCost(l);
-		} catch (NumberFormatException ne ){ ne.printStackTrace();}
-	}
-	public void setCost(Long cost){
-		System.out.println("in set cost long with " + cost);
+
+	public void setCost(Double cost){
 		this.cost = cost;
 	}
 	
@@ -146,6 +138,7 @@ public class Worker implements Serializable, IWorker{
 		
 	}
 	public Worker(String fName, String lName,String city, String state, String zip, String email, String phone, String skill, double cost, String password) {
+        System.out.println(" in worker constructor ");
 		this.firstName = fName;
 		this.lastName = lName;
 		this.city = city;

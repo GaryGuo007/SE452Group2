@@ -94,7 +94,7 @@
                     </div>
                     <div class="panel-body">
                         <p>New customer? Start your search by registering here.</p>
-                        <a href="#" class="btn btn-default custom_btn">Register</a>
+                        <a href="customer.html" class="btn btn-default custom_btn">Register</a>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="panel-body">
                         <p>New contractor or buisness? Sign up by registering here.</p>
-                        <a href="#" class="btn btn-default custom_btn">Register</a>
+                        <a href="contractor.html" class="btn btn-default custom_btn">Register</a>
                     </div>
                 </div>
             </div>

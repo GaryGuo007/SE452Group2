@@ -46,6 +46,7 @@ public class LoginController {
 			   return cust;
 		   }
 		}
+		cs.close();
 		System.out.println("DEBUG: Did not find login " + login);
 		return null;
 	}

@@ -25,7 +25,7 @@ public class CustomerService implements ICustomerService {
 
 		tx.begin();
 		em.persist(cust);
-		tx.commit();		
+		tx.commit();
 	}
 
 	@Override
@@ -49,7 +49,9 @@ public class CustomerService implements ICustomerService {
 		return c.toString();
 	}
 	
-	
+	public void close() {
+		em.close();
+	}
 	
 	
 	

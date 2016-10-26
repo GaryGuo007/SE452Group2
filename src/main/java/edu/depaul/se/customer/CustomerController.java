@@ -26,6 +26,7 @@ public class CustomerController {
 		
 		CustomerService cs = new CustomerService();
 		cs.saveCustomer(customer);
+		cs.close();
 		return new ModelAndView("login", "Login", new Login());
 	}
 

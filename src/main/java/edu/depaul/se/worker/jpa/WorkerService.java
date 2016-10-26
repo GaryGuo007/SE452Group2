@@ -22,8 +22,7 @@ public class WorkerService implements IWorkerService {
 		
 		tx.begin();
 		em.persist(worker);
-		tx.commit();
-		
+		tx.commit();	
 	}
 	
 	@Override
@@ -34,9 +33,10 @@ public class WorkerService implements IWorkerService {
 		String wID= w.getId();
 		IWorker W = em.find(Worker.class, wID);
 		return W;
-		
-		//return getCustomer(1L);
 	}
 
+	public void close(){
+		em.close();
+	}
 
 }

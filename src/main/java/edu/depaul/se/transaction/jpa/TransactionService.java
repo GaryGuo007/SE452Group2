@@ -1,14 +1,8 @@
 package edu.depaul.se.transaction.jpa;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
-
-import edu.depaul.se.customer.Customer;
-import edu.depaul.se.customer.ICustomer;
 import edu.depaul.se.transaction.ITransaction;
 import edu.depaul.se.transaction.ITransactionService;
 

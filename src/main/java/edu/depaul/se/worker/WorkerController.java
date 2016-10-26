@@ -23,6 +23,7 @@ public class WorkerController {
 		System.out.println("DEBUG: Worker " + worker);
 		WorkerService ws = new WorkerService(); 
 		ws.saveWorker(worker);
+		ws.close();
 		return "index";
 	}
 }

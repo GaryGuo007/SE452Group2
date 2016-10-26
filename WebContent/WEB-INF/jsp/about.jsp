@@ -43,11 +43,11 @@
                     </div>
                     <div class="panel-body" style="padding:35px;">
 						<br>
-                        <p><h4>Welcome to the Web Application for Group 2. This was created by Benjamin Conrad, Gary Guo, and Steve Nickerson.<br><br>
-						This application models that of a site such as Angie's List. It enables customers to sign up and search for contractors or businesses for home improvement needs. A full history is kept for each customer.</p>
+                        <h4>Welcome to the Web Application for Group 2. This was created by Benjamin Conrad, Gary Guo, and Steve Nickerson.</h4><br><br>
+						<p>This application models that of a site such as Angie's List. It enables customers to sign up and search for contractors or businesses for home improvement needs. A full history is kept for each customer.</p>
 						<hr></hr>
 												
-						<p><h4>Created using:</p></h4>
+						<h4>Created using:</h4>
 
 						<h5>
 						<ul class="list-unstyled">

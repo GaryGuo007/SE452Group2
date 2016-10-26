@@ -45,7 +45,7 @@
                         <h2><i class="fa fa-fw fa-compass"></i>Contractor Registration</h2>
                     </div>
                     <div class="panel-body" style="padding:35px;">
-						<form:form role="form" action="addContractor.html" method="post" class="registration-form">
+						<form:form modelAttribute="Worker" role="form" action="addContractor.html" method="post" class="registration-form">
                         		
                         		<fieldset>
 		             		          <div class="form-bottom">
@@ -56,15 +56,11 @@
 				                        </div>
 				                        <div class="form-group">
 				                        	
-				                        	<input type="text" name="lastName" placeholder="Last name..." class="form-control">
+				                        	<form:input path="lastName" type="text" name="lastName" placeholder="Last name..." class="form-control"></form:input>
 				                        </div>
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="address" placeholder="Address..." class="form-control">
-				                        </div>
-										<div class="form-group">
-				                     
-				                        	<input type="text" name="city" placeholder="City..." class="form-control">
+				                        	<form:input path="city" type="text" name="city" placeholder="City..." class="form-control"></form:input>
 				                        </div>
 										<div class="form-group">
 				                    		<select class="form-control" id="state" name="state" >
@@ -124,19 +120,19 @@
 				                        </div>
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="zip" placeholder="Zipcode..." class="form-control">
+				                        	<form:input path="zip" type="text" name="zip" placeholder="Zipcode..." class="form-control"></form:input>
 				                        </div>					
 										<div class="form-group">
 				                     
-				                        	<form:input type="text" path="cost" name="cost" placeholder="Cost per Hour..." class="form-control"></form:input>
+				                        	<form:input path="cost" type="text" name="cost" placeholder="Cost per Hour..." class="form-control"></form:input>
 				                        </div>											
 										<div class="form-group">
 				                     
-				                        	<input type="text" name="email" placeholder="Email..." class="form-control">
+				                        	<form:input path="email" type="text" name="email" placeholder="Email..." class="form-control"></form:input>
 				                        </div>	
 										<div class="form-group">
 				                     
-				                        	<input type="password" name="password" placeholder="Password..." class="form-control">
+				                        	<form:input path="password" type="password" name="password" placeholder="Password..." class="form-control"></form:input>
 				                        </div>	
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
