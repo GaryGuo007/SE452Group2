@@ -45,7 +45,7 @@ public class Worker implements Serializable, IWorker{
 	//City
 	private String city;
 	
-	public String getcity(){
+	public String getCity(){
 		return city;
 	}
 	

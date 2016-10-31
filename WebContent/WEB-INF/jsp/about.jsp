@@ -30,8 +30,7 @@
 	<!-- Navigation -->
 	<div id="header"></div>
 	
-
-    
+	    
 
     <!-- Page Content -->
     <div class="container content">
@@ -47,7 +46,7 @@
 						<p>This application models that of a site such as Angie's List. It enables customers to sign up and search for contractors or businesses for home improvement needs. A full history is kept for each customer.</p>
 						<hr></hr>
 												
-						<h4>Created using:</h4>
+						<h4>Created using: <a href="results.html">test</a></h4>
 
 						<h5>
 						<ul class="list-unstyled">

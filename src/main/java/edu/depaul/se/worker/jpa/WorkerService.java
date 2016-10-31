@@ -1,6 +1,8 @@
 package edu.depaul.se.worker.jpa;
 
 
+import edu.depaul.se.customer.Customer;
+import edu.depaul.se.customer.ICustomer;
 import edu.depaul.se.worker.*;
 
 import java.util.List;
@@ -33,6 +35,26 @@ public class WorkerService implements IWorkerService {
 		String wID= w.getId();
 		IWorker W = em.find(Worker.class, wID);
 		return W;
+	}
+	
+	@Override
+	public IWorker getWorkerById(String id) {
+		TypedQuery<Worker> q = em.createQuery("select c from Worker c where c.id = :id", Worker.class);
+		List<Worker> w1 = q.setParameter("id", id).getResultList();
+		Worker w = w1.get(0);
+		String wID= w.getId();
+		IWorker W = em.find(Worker.class, wID);
+		return W;
+	}
+	
+	@Override
+	public List<Worker> getWorkerByProfession(String skill) {
+		TypedQuery<Worker> q = em.createQuery("select w from Worker w where w.skill = :skill", Worker.class);
+		List<Worker> w1 = q.setParameter("skill", skill).getResultList();
+		if ( w1.isEmpty() )
+			return null;
+					
+		return w1;
 	}
 
 	public void close(){

@@ -7,9 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
-
-
+<title>contractorinfo</title>
     <link rel="stylesheet" href="CSS/bootstrap.min.css" >
     <link href="CSS/rentAll.css" rel="stylesheet"> 
     
@@ -32,11 +30,10 @@
 
 <body style = "font-family: 'Montserrat', sans-serif">
 	
-<!-- Navigation -->
+	 <!-- Navigation -->
 	<div id="header"></div>
 	
-
-
+   
 
 
     <!-- Page Content -->
@@ -45,44 +42,23 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default  info_box" style="text-align:center; padding: 0px; margin:50px">
                     <div class="panel-heading custom_panel">
-                        <h2><i class="fa fa-fw fa-compass"></i>Login</h2>
+                        <h2><i class="fa fa-fw fa-compass"></i>Results</h2>
                     </div>
                     <div class="panel-body" style="padding:35px;">
-						<br>
-                        <div class="login-container">
-                <div class="login-card">
-                    <div class="login-form">
-                        <form:form modelAttribute="Login" action="performLogin" method="post" class="form-horizontal">
-							<br>
-                            <div class="input-group input-sm">
-                                <label class="input-group-addon" for="username"><i class="fa fa-user"></i></label>
-                                <form:input path="email" type="text" class="form-control" id="emailAddress" name="ssoId" placeholder="Enter Email Address" ></form:input>
-                            </div>
-							<br>
-                            <div class="input-group input-sm">
-                                <label class="input-group-addon" for="password"><i class="fa fa-lock"></i></label> 
-                                <form:input path="password" type="password" class="form-control" id="password"  name="password" placeholder="Enter Password" ></form:input>
-                            </div>
-                            <br>
-                                 
-                            <div class="form-actions">
-                                <input type="submit"
-                                    class="btn btn-default custom_btn" value="Log in">
-                            </div>
-                        </form:form>
-                    </div>
-                </div>
-            </div>
-			
+                  
 						
-						<br>
-
+							
+						
                     </div>
-                </div>
-			</div>
-		</div>
+                
 
-	</div>
+                </div>
+          </div>
+       </div>
+    </div>
+                
+                
+               
 
         <!-- Footer -->
 
@@ -95,7 +71,5 @@
    
     <!-- /.container -->
 
-
 </body>
-
 </html>
