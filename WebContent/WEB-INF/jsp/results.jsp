@@ -99,11 +99,66 @@
 						</c:if>
 						
                     </div>
-                
-
+                    
+          
+				
                    	</div>
+               
                  </div>
-                 </div>
+				</div>
+					                 
+           		<div class="row">
+           		<div class="col-md-8 col-md-offset-2">
+                    <c:if test="${idGet}">
+                		<div class="panel panel-default  info_box" style="text-align:center; padding: 0px; margin:50px">
+                    	<div class="panel-heading custom_panel">
+                        <h2><i class="fa fa-fw fa-compass"></i>Leave a Review</h2>
+                    	</div>
+                    	<div class="panel-body" style="padding:35px;">
+                   		  
+                   		  <form:form modelAttribute="Review" action="writeReview" method="post" class="form-horizontal">
+							<br>
+                            <div class="input-group input-sm">
+                                <label class="input-group-addon" ><i class="fa fa-user"></i></label>
+                                <form:input path="first" type="text" class="form-control" id="firstName" name="ssoId" placeholder="First Name" required="true"></form:input>
+                            </div>
+							<br>
+                            <div class="input-group input-sm">
+                                <label class="input-group-addon" ><i class="fa fa-lock"></i></label> 
+                                <form:input path="last" type="text" class="form-control" id="lastName"  name="last" placeholder="Last Name" required="true"></form:input>
+                            </div>
+                            <br>
+                            <div class="input-group input-sm">
+                                <label class="input-group-addon" ><i class="fa fa-lock"></i></label> 
+                                <form:textarea path="review" rows="5" class="form-control" id="review"  name="review" placeholder="Write Review" required="true" ></form:textarea>
+                            </div>
+                            <br>
+                                 
+                            <div class="form-actions">
+                                <input type="submit"
+                                    class="btn btn-default custom_btn" value="Submit">
+                            </div>
+                        </form:form>
+                        	
+                        	<br>
+                        	<br>
+						
+							<c:forEach var="listValue" items="${reviews}">
+								
+								<div><h4><b>Name:</b> ${listValue.getCustFirst()} ${listValue.getCustLast()}</h4></div>
+								<div><h5>${listValue.getNotes()}</h5></div>	
+								<br>				
+							</c:forEach>
+						
+						
+					    
+					
+                   			 </div>
+                   		</div>
+					</c:if>
+				</div>	
+				</div>		
+                
                  </div>
                 
                 
@@ -114,7 +169,7 @@
         <footer class="footer">
 			<div class="container">
 				<p style="margin:15px; color:#ccc">Copyright &copy; 2016</p>
-			<div>
+			</div>
 		</footer>
 
    

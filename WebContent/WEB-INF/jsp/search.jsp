@@ -39,6 +39,7 @@
     <!-- Page Content -->
     <div class="container content">
 		<div class="row">
+			<!-- <div class ="col-md-6 col-md-offset-3" style="text-align:center"><c:out value="${session.getName()}"></c:out></div> -->
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default  info_box" style="text-align:center; padding: 0px; margin:50px">
                     <div class="panel-heading custom_panel">

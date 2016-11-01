@@ -3,6 +3,7 @@ package edu.depaul.se;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,11 +16,21 @@ import edu.depaul.se.worker.jpa.WorkerService;
 
 
 @Controller
+@Scope("session")
 public class SearchController {
+	
+	
 	
 	 @RequestMapping(value = "/search")
 	    public ModelAndView search() {
-		    System.out.println("DEBUG: In SearchController ");
+		 	
+		 	Session session = new Session();
+		 	if(session.isLoggedIn()){
+		 		System.out.println("DEBUG: In SearchController ");
+		 	}
+		 			
+		    
+		  
 	        return new ModelAndView("search", "Search", new Search());	
 	    }
 	 
@@ -27,7 +38,8 @@ public class SearchController {
 		public ModelAndView performSearch(@ModelAttribute("search")Search search, ModelMap model) {
 		
 		
-		 	//System.out.println("DEBUG" + " " + search.getProfession());
+		 	
+		 	System.out.println("DEBUG" + " " );
 		
 			double cost = search.getCost();
 			String skill = search.getProfession();
@@ -46,8 +58,7 @@ public class SearchController {
 				return new ModelAndView("search", "Search", new Search());
 			}
 			
-			
-			
+						
 			//Gets a list of all by profession.
 		    WorkerService ws = new WorkerService();
 			List<Worker> cust = ws.getWorkerByProfession(search.getProfession());

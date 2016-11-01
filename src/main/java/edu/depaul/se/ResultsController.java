@@ -1,21 +1,35 @@
 package edu.depaul.se;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
+import edu.depaul.se.transaction.jpa.Transaction;
+import edu.depaul.se.transaction.jpa.TransactionService;
 import edu.depaul.se.worker.Worker;
 import edu.depaul.se.worker.jpa.WorkerService;
 
 @Controller
 public class ResultsController {
+
 	
-	 
+	
+	private String workerId;
+	String currentPage;
+	
 	 @RequestMapping(value = "/results")
 	    public ModelAndView helloWorld() {
 
@@ -31,25 +45,62 @@ public class ResultsController {
 		 
 		 	if(!getID.isEmpty()){
 		 		idTrue = true;
+		 		workerId = getID;
+		 		
 		 	}
 		 	
+		 	currentPage = "results.html?getId="+workerId;
 		 	
-		 
-		 	
+
 		 	
 	        WorkerService ws = new WorkerService();
 	        Worker resultWorker = (Worker) ws.getWorkerById(getID);
+	        
+	        TransactionService ts = new TransactionService();
+	        List<Transaction> reviews = new ArrayList<>();
+	        
+	        reviews = ts.getTransaction(workerId);
+	    
 	        
 	        String mapLink = "https://google.com/maps/search/"+resultWorker.getZip();
 	        
 	    	model.addAttribute("idGet", idTrue);
 	        model.addAttribute("work",resultWorker);
 	        model.addAttribute("zipLink",mapLink);
+	        model.addAttribute("reviews",reviews);
 	        
-	       	       	        
-	        return new ModelAndView("results"); 
+	        ModelAndView mav = new ModelAndView("results", "Review", new Review());
+	       	mav.addObject("id",getID);  
+	       	
+	        return mav; 
 	    }
+	 
 	
+	
+ 		
+	 
+	 	@RequestMapping(value="/writeReview")
+	 	public ModelAndView writeReviews(@ModelAttribute("result")Review review, ModelMap model) {
+	 	
+	 		
+	 		String first = review.getFirst();
+	 		String last = review.getLast();
+	 		String reviewText = review.getReview().toString();
+	 		 		
+	 		
+	 		Transaction t = new Transaction(workerId,first,last,reviewText);
+	 		
+	 		TransactionService service = new TransactionService();
+	 		service.saveTransaction(t);
+	 		
+	 		
+	 		
+	 		System.out.println(workerId);
+	 		String redirect = "redirect:/"+currentPage;
+
+		 return new ModelAndView(redirect);
+	 }
+		
 	 
 	 
 	 

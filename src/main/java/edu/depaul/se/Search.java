@@ -3,8 +3,8 @@ package edu.depaul.se;
 public class Search {
 	private String profession;
 	private String zipcode;
-	private String City;
-	private String State;
+	private String city;
+	private String state;
 	private double cost;
 	
 	public String getProfession() {
@@ -21,17 +21,17 @@ public class Search {
 	}
 
 	public String getCity() {
-		return City;
+		return city;
 	}
 	public void setCity(String city) {
-		City = city;
+		this.city = city;
 	}
 	
 	public String getState() {
-		return State;
+		return state;
 	}
 	public void setState(String state) {
-		State = state;
+		this.state = state;
 	}
 	
 	public void setCost(double cost) {
