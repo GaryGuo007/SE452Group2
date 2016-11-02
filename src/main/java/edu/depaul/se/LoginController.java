@@ -29,6 +29,17 @@ public class LoginController {
 		    return new ModelAndView("login", "Login", new Login());		
 		}
 	}
+	@RequestMapping(value = "/logout")
+	public ModelAndView logout(){
+		System.out.println("DEBUG: In LoginController ");
+		System.out.println(" session " + session );
+		if ( session.isLoggedIn() ) {
+			session.setLoggedIn(false);
+			session.setCustomer(new Customer());	 
+			session.setName("Not logged in");
+		}
+		return new ModelAndView("login", "Login", new Login());	
+	}
 	
 	@RequestMapping(value="/performLogin")
 	public ModelAndView performLogin(@ModelAttribute("login")Login login, ModelMap model) {

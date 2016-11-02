@@ -134,17 +134,19 @@
 				                     
 				                        	<form:input path="password" type="password" name="form-password" placeholder="Password..." class="form-control"></form:input>
 				                        </div>	
-		                                    <input type="submit" class="btn btn-default custom_btn" value="<c:choose>
+		                                    <input type="submit" class="btn btn-default custom_btn" name="register" value="<c:choose>
 		                                                                                                     <c:when test="${session.isLoggedIn()}">
 		                                                                                                          Update Info</c:when>
 		                                                                                                     <c:otherwise>
 		                                                                                                          Register</c:otherwise>
 		                                                                                                     </c:choose>"
-		                                                                                                  >
-         		                      				                        
+		                                                                                                  >	                        
 				                    </div>
 			                    </fieldset>
 							</form:form>
+							<form action="logout.html" method="post" >
+							   <input type="submit" class="btn btn-default custom_btn" name="logout" value="Log out" />
+							</form>
                         <!--<a href="index.html" class="btn btn-default custom_btn">Register</a> -->
                     </div>
                 </div>

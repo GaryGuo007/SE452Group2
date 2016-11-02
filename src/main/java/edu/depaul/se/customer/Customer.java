@@ -143,7 +143,8 @@ public class Customer implements ICustomer, Serializable {
 		sb.append(this.state).append(", ");
 		sb.append(this.zip).append(", ");
 		sb.append(this.email).append(", ");
-		sb.append(this.password);
+		sb.append(this.password).append(", ");
+		sb.append(this.getId());
 		return sb.toString();
 	}
 }
