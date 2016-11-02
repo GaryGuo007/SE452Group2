@@ -35,6 +35,7 @@ public class LoginController {
 			return new ModelAndView("login", "Login", new Login());
 		}
 		session.setName(customer.getFirstName());
+		session.setEmail(customer.getEmail());
 		return new ModelAndView("index");
 	}
 	

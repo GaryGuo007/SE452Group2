@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class Session {
 
 	private String name;
+	private String email;
 	private boolean loggedIn;
 	
 	public Session() {
@@ -26,6 +27,13 @@ public class Session {
 	}
 	public void setLoggedIn(boolean loggedIn) {
 		this.loggedIn = loggedIn;
+	}
+	
+	public void setEmail(String email){
+		this.email = email;
+	}
+	public String getEmail(){
+		return email;
 	}
 	
 }

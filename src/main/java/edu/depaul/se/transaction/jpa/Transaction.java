@@ -37,40 +37,14 @@ public class Transaction implements ITransaction, Serializable {
 		return this.workerID;
 	}
 	
-	/*
+	
 	//Customer ID
 	private String customerID;
 
 	public void setCustomerID(String customerID){
 		this.customerID = customerID;
 	}
-	
-	public String getCustomerID(){
-		return this.customerID;
-	}
-	
-	//Cost
-	private double cost;
 
-	public void setCost(Long cost){
-		this.cost = cost;
-	}
-		
-	public double getCost(){
-		return this.cost;
-	}
-	
-	
-	//Rating
-	private int rating;
-	
-	public void setCost(int rating){
-		this.rating = rating;
-	}
-		
-	public int getRating(){
-		return this.rating;
-	}*/
 	private String custFirst;
 	private String custLast;
 	
@@ -89,8 +63,9 @@ public class Transaction implements ITransaction, Serializable {
 		
 	}
 	
-	public Transaction(String workerID, String custFirst, String custLast, String notes){
+	public Transaction(String workerID, String customerID, String custFirst, String custLast, String notes){
 		this.workerID = workerID;
+		this.customerID = customerID;
 		this.custFirst = custFirst;
 		this.custLast = custLast;
 		this.notes = notes;

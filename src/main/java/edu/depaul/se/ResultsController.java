@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,18 +18,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import edu.depaul.se.customer.Customer;
+import edu.depaul.se.customer.jpa.CustomerService;
 import edu.depaul.se.transaction.jpa.Transaction;
 import edu.depaul.se.transaction.jpa.TransactionService;
 import edu.depaul.se.worker.Worker;
 import edu.depaul.se.worker.jpa.WorkerService;
 
 @Controller
+@Scope("session")
 public class ResultsController {
 
 	
 	
 	private String workerId;
 	String currentPage;
+	
+	@Autowired
+	private Session session;
 	
 	 @RequestMapping(value = "/results")
 	    public ModelAndView helloWorld() {
@@ -60,7 +67,7 @@ public class ResultsController {
 	        List<Transaction> reviews = new ArrayList<>();
 	        
 	        reviews = ts.getTransaction(workerId);
-	    
+
 	        
 	        String mapLink = "https://google.com/maps/search/"+resultWorker.getZip();
 	        
@@ -83,19 +90,37 @@ public class ResultsController {
 	 	public ModelAndView writeReviews(@ModelAttribute("result")Review review, ModelMap model) {
 	 	
 	 		
-	 		String first = review.getFirst();
-	 		String last = review.getLast();
+	 		String first;
+	 		String last;
 	 		String reviewText = review.getReview().toString();
-	 		 		
-	 		
-	 		Transaction t = new Transaction(workerId,first,last,reviewText);
-	 		
-	 		TransactionService service = new TransactionService();
-	 		service.saveTransaction(t);
+	 		String customerEmail= session.getEmail();	 	
+	 		String error;
 	 		
 	 		
 	 		
-	 		System.out.println(workerId);
+	 		
+	 		
+	 		if(customerEmail != null){
+		 	 	
+		 		
+		 		TransactionService tranService = new TransactionService();
+		 		CustomerService custService = new CustomerService();
+			    
+		 		Customer c = (Customer) custService.getCustomerByEmail(customerEmail);
+		 		first = c.getFirstName();
+		 		last = c.getLastName();
+			 			                
+			    System.out.println(c.getFirstName() + c.getLastName());
+		 
+		 		Transaction t = new Transaction(workerId,customerEmail,first,last,reviewText); 				
+		 		tranService.saveTransaction(t);
+		 		
+	 		}else{
+	 			return new ModelAndView("login", "Login", new Login());
+	 		}
+	 		
+	 		
+
 	 		String redirect = "redirect:/"+currentPage;
 
 		 return new ModelAndView(redirect);

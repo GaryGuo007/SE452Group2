@@ -116,21 +116,13 @@
                     	</div>
                     	<div class="panel-body" style="padding:35px;">
                    		  
+                   	
                    		  <form:form modelAttribute="Review" action="writeReview" method="post" class="form-horizontal">
 							<br>
-                            <div class="input-group input-sm">
-                                <label class="input-group-addon" ><i class="fa fa-user"></i></label>
-                                <form:input path="first" type="text" class="form-control" id="firstName" name="ssoId" placeholder="First Name" required="true"></form:input>
-                            </div>
-							<br>
+                        
                             <div class="input-group input-sm">
                                 <label class="input-group-addon" ><i class="fa fa-lock"></i></label> 
-                                <form:input path="last" type="text" class="form-control" id="lastName"  name="last" placeholder="Last Name" required="true"></form:input>
-                            </div>
-                            <br>
-                            <div class="input-group input-sm">
-                                <label class="input-group-addon" ><i class="fa fa-lock"></i></label> 
-                                <form:textarea path="review" rows="5" class="form-control" id="review"  name="review" placeholder="Write Review" required="true" ></form:textarea>
+                                <form:textarea path="review" rows="8" class="form-control" id="review"  name="review" placeholder="Write Review" required="true" ></form:textarea>
                             </div>
                             <br>
                                  

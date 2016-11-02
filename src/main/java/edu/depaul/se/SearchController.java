@@ -3,6 +3,7 @@ package edu.depaul.se;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,17 +20,18 @@ import edu.depaul.se.worker.jpa.WorkerService;
 @Scope("session")
 public class SearchController {
 	
-	
+	@Autowired
+	private Session session;
 	
 	 @RequestMapping(value = "/search")
 	    public ModelAndView search() {
 		 	
-		 	Session session = new Session();
 		 	if(session.isLoggedIn()){
 		 		System.out.println("DEBUG: In SearchController ");
+		 		
 		 	}
-		 			
-		    
+		 	
+	    
 		  
 	        return new ModelAndView("search", "Search", new Search());	
 	    }
