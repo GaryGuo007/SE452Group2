@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav class="navbar navbar-fixed-top header_nav" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,7 +29,7 @@
                         </ul>
                     </li>
 					 <li>
-                        <a href="login.html">Login</a>
+                        <a href="login.html">Login: <c:out value="${session.name }"></c:out></a> 
                     </li>
                 </ul>
             </div>

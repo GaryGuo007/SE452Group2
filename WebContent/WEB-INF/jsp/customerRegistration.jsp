@@ -134,7 +134,13 @@
 				                     
 				                        	<form:input path="password" type="password" name="form-password" placeholder="Password..." class="form-control"></form:input>
 				                        </div>	
-		                                    <input type="submit" class="btn btn-default custom_btn">
+		                                    <input type="submit" class="btn btn-default custom_btn" value="<c:choose>
+		                                                                                                     <c:when test="${session.isLoggedIn()}">
+		                                                                                                          Update Info</c:when>
+		                                                                                                     <c:otherwise>
+		                                                                                                          Register</c:otherwise>
+		                                                                                                     </c:choose>"
+		                                                                                                  >
          		                      				                        
 				                    </div>
 			                    </fieldset>
