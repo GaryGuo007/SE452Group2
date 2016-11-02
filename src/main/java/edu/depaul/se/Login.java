@@ -1,5 +1,7 @@
 package edu.depaul.se;
 
+import edu.depaul.se.customer.Customer;
+
 public class Login {
 
 	private String email;
@@ -17,7 +19,6 @@ public class Login {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 	@Override
 	public String toString(){
 		return "email: " + email + " password: " + password;

@@ -23,7 +23,22 @@ public class LoginController {
 	public ModelAndView login(){
 		System.out.println("DEBUG: In LoginController ");
 		System.out.println(" session " + session );
-		return new ModelAndView("login", "Login", new Login());		
+		if ( session.isLoggedIn() ) {
+			return new ModelAndView("customerRegistration", "Customer", session.getCustomer());
+		} else {
+		    return new ModelAndView("login", "Login", new Login());		
+		}
+	}
+	@RequestMapping(value = "/logout")
+	public ModelAndView logout(){
+		System.out.println("DEBUG: In LoginController ");
+		System.out.println(" session " + session );
+		if ( session.isLoggedIn() ) {
+			session.setLoggedIn(false);
+			session.setCustomer(new Customer());	 
+			session.setName("Not logged in");
+		}
+		return new ModelAndView("login", "Login", new Login());	
 	}
 	
 	@RequestMapping(value="/performLogin")
@@ -36,6 +51,7 @@ public class LoginController {
 		}
 		session.setName(customer.getFirstName());
 		session.setEmail(customer.getEmail());
+		session.setLoggedIn(true);
 		return new ModelAndView("index");
 	}
 	

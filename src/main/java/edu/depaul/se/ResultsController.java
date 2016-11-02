@@ -100,9 +100,8 @@ public class ResultsController {
 	 		
 	 		
 	 		
-	 		if(customerEmail != null){
-		 	 	
-		 		
+	 		if(session.isLoggedIn()){
+		 	 			 		
 		 		TransactionService tranService = new TransactionService();
 		 		CustomerService custService = new CustomerService();
 			    

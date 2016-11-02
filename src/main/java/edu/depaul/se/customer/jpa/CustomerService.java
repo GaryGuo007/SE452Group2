@@ -24,7 +24,18 @@ public class CustomerService implements ICustomerService {
 		EntityTransaction tx = em.getTransaction();
 
 		tx.begin();
+		System.out.println("going to create cust " + cust.toString());
 		em.persist(cust);
+		tx.commit();
+	}
+	
+	@Override
+	public void updateCustomer(ICustomer cust) {
+		EntityTransaction tx = em.getTransaction();
+
+		tx.begin();
+		System.out.println("going to merge cust " + cust.toString());
+		em.merge(cust);
 		tx.commit();
 	}
 
@@ -36,7 +47,9 @@ public class CustomerService implements ICustomerService {
 			return null;
 		Customer c = c1.get(0);
 		String cID= c.getId();
+		System.out.println("DEBUG: cID is " + cID);
 		ICustomer C = em.find(Customer.class, cID);
+		System.out.println("DEBUG: cust is " + C.toString());
 		return C;
 	}
 
@@ -51,8 +64,6 @@ public class CustomerService implements ICustomerService {
 	
 	public void close() {
 		em.close();
-	}
-	
-	
+	}	
 	
 }
