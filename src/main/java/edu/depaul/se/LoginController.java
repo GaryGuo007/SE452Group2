@@ -24,6 +24,9 @@ public class LoginController {
 		System.out.println("DEBUG: In LoginController ");
 		System.out.println(" session " + session );
 		if ( session.isLoggedIn() ) {
+			if ( session.getCustomer() == null ) {
+				System.out.println("DEBUG: Error, isLoggedIn but no Customer object " + session.toString() );
+			}
 			return new ModelAndView("customerRegistration", "Customer", session.getCustomer());
 		} else {
 		    return new ModelAndView("login", "Login", new Login());		
@@ -44,28 +47,36 @@ public class LoginController {
 	@RequestMapping(value="/performLogin")
 	public ModelAndView performLogin(@ModelAttribute("login")Login login, ModelMap model) {
 		Customer customer = validateLogin(login);
+		ModelAndView mav = new ModelAndView("index");
 		if ( customer == null ) {
 			session.setLoggedIn(false);
 			session.setName("Not Logged In");
-			return new ModelAndView("login", "Login", new Login());
+			session.setEmail("");
+			session.setCustomer(null);
+			mav = new ModelAndView("login", "Login", new Login());
+		} else {
+		   session.setLoggedIn(true);
+		   session.setName(customer.getFirstName());
+		   session.setEmail(customer.getEmail());
+		   session.setCustomer(customer);
 		}
-		session.setName(customer.getFirstName());
-		session.setEmail(customer.getEmail());
-		session.setLoggedIn(true);
-		return new ModelAndView("index");
+		return mav;
 	}
 	
 	private Customer validateLogin(Login login ) {
+		Customer customer = null;
 		CustomerService cs = new CustomerService();
-		Customer cust = (Customer) cs.getCustomerByEmail(login.getEmail());
-		if ( cust != null ) {
-	   	   if ( login.getPassword().trim() != null && cust.getPassword().equals(login.getPassword())) {
-			   return cust;
+		Customer testCust = (Customer) cs.getCustomerByEmail(login.getEmail());
+		if ( testCust != null ) {
+	   	   if ( login.getPassword().trim() != null && testCust.getPassword().equals(login.getPassword())) {
+			   customer = testCust;
 		   }
 		}
 		cs.close();
-		System.out.println("DEBUG: Did not find login " + login);
-		return null;
+		if ( customer == null ) {
+		   System.out.println("DEBUG: Did not find login " + login);
+		}
+		return customer;
 	}
 	
 }

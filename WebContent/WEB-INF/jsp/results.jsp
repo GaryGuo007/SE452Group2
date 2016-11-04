@@ -45,9 +45,8 @@
                         <h2><i class="fa fa-fw fa-compass"></i>Results</h2>
                     </div>
                     <div class="panel-body" style="padding:35px;">
-                  
-							<c:if test="${not idGet}">
 							<table class="table table-bordered" >
+							<c:if test="${not idGet}">
 						    <thead>
 						      <tr>
 						      	<th>Skill</th>
@@ -59,13 +58,12 @@
 						        <th>Cost $P/H</th>
 						      </tr>
 						    </thead>
-						    <tbody>
 					   		</c:if>
-					    
+						    <tbody>
 											
 								<c:forEach var="listValue" items="${dbResults}">
 								<tr>
-									<td Style="text-decoration: none"><a href="results.html?getId=${listValue.getId()}">${listValue.getSkill()}</td>
+									<td Style="text-decoration: none"><a href="results.html?getId=${listValue.getId()}">${listValue.getSkill()}</a></td>
 									<td>${listValue.getFirstName()}</td>
 									<td>${listValue.getLastName()}</td>
 									<td>${listValue.getCity()}</td>

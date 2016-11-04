@@ -16,22 +16,27 @@ public class Session {
 	
 	public Session() {
 		this.name = "Not logged in";
+		this.email = "";
 		this.loggedIn = false;
+		this.customer = null;
 	}
 	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
+		//System.out.println("DEBUG: from session, setName " + this.toString());
 		this.name = name;
 	}
 	public boolean isLoggedIn() {
 		return loggedIn;
 	}
 	public void setLoggedIn(boolean loggedIn) {
+		//System.out.println("DEBUG: from session, setLoggedIn " + this.toString());
 		this.loggedIn = loggedIn;
 	}
 	public void setCustomer(Customer cust) {
+		//System.out.println("DEBUG: from session, setCustomer " + this.toString());
 		this.customer = cust;
 	}
 	public Customer getCustomer(){
@@ -39,10 +44,19 @@ public class Session {
 	}
 	
 	public void setEmail(String email){
+		//System.out.println("DEBUG: from session, setCustomer " + this.toString());
 		this.email = email;
 	}
 	public String getEmail(){
 		return email;
 	}
 	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.name).append(", ");
+		sb.append(this.email).append(", ");
+		sb.append(this.loggedIn).append(", ");
+		sb.append(this.customer);
+		return sb.toString();
+	}
 }

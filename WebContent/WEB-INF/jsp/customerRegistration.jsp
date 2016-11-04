@@ -67,7 +67,7 @@
 				                        	<form:input path="city" type="text" name="form-city" placeholder="City..." class="form-control"></form:input>
 				                        </div>
 										<div class="form-group">
-				                    		<select class="form-control" id="state" name="state" placeholder="City...">
+				                    		<select class="form-control" id="state" name="state" >
 												<option value="AK">Alaska</option>
 												<option value="AL">Alabama</option>
 												<option value="AR">Arkansas</option>
