@@ -97,7 +97,7 @@
                     </div>
                     <div class="panel-body">
                         <p>New customer? Start your search by registering here.</p>
-                        <a href="customer.html" class="btn btn-default custom_btn">Register</a>
+                        <a href="customerRegistration.jsp" class="btn btn-default custom_btn">Register</a>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="panel-body">
                         <p>If you are already a customer you can head to the search page and start looking for someone who meets your needs. If you are looking to register select the appropriate box on the left and right.</p>
-                        <a href="search.html" class="btn btn-default custom_btn">Start Search</a>
+                        <a href="search.jsp" class="btn btn-default custom_btn">Start Search</a>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                     </div>
                     <div class="panel-body">
                         <p>New contractor or buisness? Sign up by registering here.</p>
-                        <a href="contractor.html" class="btn btn-default custom_btn">Register</a>
+                        <a href="contractorRegistration.jsp" class="btn btn-default custom_btn">Register</a>
                     </div>
                 </div>
             </div>
