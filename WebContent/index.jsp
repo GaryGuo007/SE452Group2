@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header get_started" style="text-align:center; margin-bottom:40px;">
-                    Getting Started
+                   <!--  Getting Started-->
                 </h1>
             </div>
             <div class="col-md-4">
