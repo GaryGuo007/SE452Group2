@@ -11,17 +11,17 @@ import edu.depaul.se.worker.jpa.WorkerService;
 @Controller
 public class WorkerController {
 	@RequestMapping(value = "/contractor")
-	public ModelAndView worker(){
+	public ModelAndView worker() {
 		System.out.println("DEBUG: In WorkerController worker ");
 		return new ModelAndView("contractorRegistration", "Worker", new Worker());
-		
+
 	}
-	
+
 	@RequestMapping(value = "/addContractor")
-	public String addCustomer(@ModelAttribute("worker")Worker worker, ModelMap model) {
+	public String addCustomer(@ModelAttribute("worker") Worker worker, ModelMap model) {
 		System.out.println("DEBUG: In WorkerController addContractor ");
 		System.out.println("DEBUG: Worker " + worker);
-		WorkerService ws = new WorkerService(); 
+		WorkerService ws = new WorkerService();
 		ws.saveWorker(worker);
 		ws.close();
 		return "index";

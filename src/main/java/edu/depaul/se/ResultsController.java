@@ -29,107 +29,83 @@ import edu.depaul.se.worker.jpa.WorkerService;
 @Scope("session")
 public class ResultsController {
 
-	
-	
 	private String workerId;
 	String currentPage;
-	
+
 	@Autowired
 	private Session session;
-	
-	 @RequestMapping(value = "/results")
-	    public ModelAndView helloWorld() {
 
-	        String message = "Hello World";
-	        return new ModelAndView("results", "message", message); 
-	    }
-	 
-	 
-	 @RequestMapping(value = "/results", method = RequestMethod.GET)
-	    public ModelAndView showResult(@RequestParam("getId") String getID, ModelMap model){
+	@RequestMapping(value = "/results")
+	public ModelAndView helloWorld() {
 
-		 	boolean idTrue = false;
-		 
-		 	if(!getID.isEmpty()){
-		 		idTrue = true;
-		 		workerId = getID;
-		 		
-		 	}
-		 	
-		 	currentPage = "results.html?getId="+workerId;
-		 	
+		String message = "Hello World";
+		return new ModelAndView("results", "message", message);
+	}
 
-		 	
-	        WorkerService ws = new WorkerService();
-	        Worker resultWorker = (Worker) ws.getWorkerById(getID);
-	        
-	        TransactionService ts = new TransactionService();
-	        List<Transaction> reviews = new ArrayList<>();
-	        
-	        reviews = ts.getTransaction(workerId);
+	@RequestMapping(value = "/results", method = RequestMethod.GET)
+	public ModelAndView showResult(@RequestParam("getId") String getID, ModelMap model) {
 
-	        
-	        String mapLink = "https://google.com/maps/search/"+resultWorker.getZip();
-	        
-	    	model.addAttribute("idGet", idTrue);
-	        model.addAttribute("work",resultWorker);
-	        model.addAttribute("zipLink",mapLink);
-	        model.addAttribute("reviews",reviews);
-	        
-	        ModelAndView mav = new ModelAndView("results", "Review", new Review());
-	       	mav.addObject("id",getID);  
-	       	
-	        return mav; 
-	    }
-	 
-	
-	
- 		
-	 
-	 	@RequestMapping(value="/writeReview")
-	 	public ModelAndView writeReviews(@ModelAttribute("result")Review review, ModelMap model) {
-	 	
-	 		
-	 		String first;
-	 		String last;
-	 		String reviewText = review.getReview().toString();
-	 		String customerEmail= session.getEmail();	 	
-	 		String error;
-	 		
-	 		
-	 		
-	 		
-	 		
-	 		if(session.isLoggedIn()){
-		 	 			 		
-		 		TransactionService tranService = new TransactionService();
-		 		CustomerService custService = new CustomerService();
-			    
-		 		Customer c = (Customer) custService.getCustomerByEmail(customerEmail);
-		 		first = c.getFirstName();
-		 		last = c.getLastName();
-			 			                
-			    System.out.println(c.getFirstName() + c.getLastName());
-		 
-		 		Transaction t = new Transaction(workerId,customerEmail,first,last,reviewText); 				
-		 		tranService.saveTransaction(t);
-		 		
-	 		}else{
-	 			return new ModelAndView("login", "Login", new Login());
-	 		}
-	 		
-	 		
+		boolean idTrue = false;
 
-	 		String redirect = "redirect:/"+currentPage;
+		if (!getID.isEmpty()) {
+			idTrue = true;
+			workerId = getID;
 
-		 return new ModelAndView(redirect);
-	 }
-		
-	 
-	 
-	 
-	
+		}
 
-	 
+		currentPage = "results.html?getId=" + workerId;
+
+		WorkerService ws = new WorkerService();
+		Worker resultWorker = (Worker) ws.getWorkerById(getID);
+
+		TransactionService ts = new TransactionService();
+		List<Transaction> reviews = new ArrayList<>();
+
+		reviews = ts.getTransaction(workerId);
+
+		String mapLink = "https://google.com/maps/search/" + resultWorker.getZip();
+
+		model.addAttribute("idGet", idTrue);
+		model.addAttribute("work", resultWorker);
+		model.addAttribute("zipLink", mapLink);
+		model.addAttribute("reviews", reviews);
+
+		ModelAndView mav = new ModelAndView("results", "Review", new Review());
+		mav.addObject("id", getID);
+
+		return mav;
+	}
+
+	@RequestMapping(value = "/writeReview")
+	public ModelAndView writeReviews(@ModelAttribute("result") Review review, ModelMap model) {
+
+		String first;
+		String last;
+		String reviewText = review.getReview().toString();
+		String customerEmail = session.getEmail();
+		String error;
+
+		if (session.isLoggedIn()) {
+
+			TransactionService tranService = new TransactionService();
+			CustomerService custService = new CustomerService();
+
+			Customer c = (Customer) custService.getCustomerByEmail(customerEmail);
+			first = c.getFirstName();
+			last = c.getLastName();
+
+			System.out.println(c.getFirstName() + c.getLastName());
+
+			Transaction t = new Transaction(workerId, customerEmail, first, last, reviewText);
+			tranService.saveTransaction(t);
+
+		} else {
+			return new ModelAndView("login", "Login", new Login());
+		}
+
+		String redirect = "redirect:/" + currentPage;
+
+		return new ModelAndView(redirect);
+	}
 
 }

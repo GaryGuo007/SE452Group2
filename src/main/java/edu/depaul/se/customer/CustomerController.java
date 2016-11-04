@@ -18,36 +18,36 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @Scope("session")
 public class CustomerController {
-	
+
 	@Autowired
 	private Session session;
-	
+
 	@RequestMapping(value = "/customer")
-	public ModelAndView customer(){
+	public ModelAndView customer() {
 		System.out.println("DEBUG: In CustomerController customer ");
 		Customer cust = session.getCustomer();
-		if ( cust == null ) {
+		if (cust == null) {
 			cust = new Customer();
 			session.setCustomer(cust);
 		}
 		return new ModelAndView("customerRegistration", "Customer", cust);
-		
+
 	}
-	
+
 	@RequestMapping(value = "/addCustomer")
-	public ModelAndView addCustomer(@ModelAttribute("SpringWeb")Customer customer, ModelMap model) {
+	public ModelAndView addCustomer(@ModelAttribute("SpringWeb") Customer customer, ModelMap model) {
 		System.out.println("DEBUG: In CustomerController addCustomer: " + customer);
 
 		ModelAndView mav = new ModelAndView("login", "Login", new Login());
 		CustomerService cs = new CustomerService();
-		if ( session.isLoggedIn() ) {
+		if (session.isLoggedIn()) {
 			System.out.println("DEBUG: session cust is " + session.getCustomer());
-            customer.setId(session.getCustomer().getId());
-            session.setCustomer(customer);
+			customer.setId(session.getCustomer().getId());
+			session.setCustomer(customer);
 			cs.updateCustomer(customer);
 			mav = new ModelAndView("index");
 		} else {
-            cs.saveCustomer(customer);	
+			cs.saveCustomer(customer);
 		}
 		cs.close();
 		return mav;

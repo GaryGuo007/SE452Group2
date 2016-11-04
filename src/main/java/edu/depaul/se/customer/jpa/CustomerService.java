@@ -14,7 +14,7 @@ import edu.depaul.se.customer.ICustomerService;
 public class CustomerService implements ICustomerService {
 
 	private EntityManager em;
-	
+
 	public CustomerService() {
 		em = Persistence.createEntityManagerFactory("jpa-mongodb").createEntityManager();
 	}
@@ -28,7 +28,7 @@ public class CustomerService implements ICustomerService {
 		em.persist(cust);
 		tx.commit();
 	}
-	
+
 	@Override
 	public void updateCustomer(ICustomer cust) {
 		EntityTransaction tx = em.getTransaction();
@@ -43,10 +43,10 @@ public class CustomerService implements ICustomerService {
 	public ICustomer getCustomerByEmail(String email) {
 		TypedQuery<Customer> q = em.createQuery("select c from Customer c where c.email = :email", Customer.class);
 		List<Customer> c1 = q.setParameter("email", email).getResultList();
-		if ( c1.isEmpty() )
+		if (c1.isEmpty())
 			return null;
 		Customer c = c1.get(0);
-		String cID= c.getId();
+		String cID = c.getId();
 		System.out.println("DEBUG: cID is " + cID);
 		ICustomer C = em.find(Customer.class, cID);
 		System.out.println("DEBUG: cust is " + C.toString());
@@ -57,13 +57,13 @@ public class CustomerService implements ICustomerService {
 	public ICustomer getCustomerInfo(String id) {
 		return em.find(Customer.class, id);
 	}
-	
-	public String getName(ICustomer c){
+
+	public String getName(ICustomer c) {
 		return c.toString();
 	}
-	
+
 	public void close() {
 		em.close();
-	}	
-	
+	}
+
 }

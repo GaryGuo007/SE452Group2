@@ -7,138 +7,139 @@ import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Worker implements Serializable, IWorker{
- 
+public class Worker implements Serializable, IWorker {
+
 	@Id
-    @GeneratedValue(generator = "uuid")
+	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
-	
+	private String id;
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	
-	//First Name
+
+	// First Name
 	private String firstName;
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String name) {
 		this.firstName = name;
 	}
-	
-	//Last Name
+
+	// Last Name
 	private String lastName;
-	
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String name) {
 		this.lastName = name;
 	}
-	
-	
-	//City
+
+	// City
 	private String city;
-	
-	public String getCity(){
+
+	public String getCity() {
 		return city;
 	}
-	
-	public void setCity(String city){
+
+	public void setCity(String city) {
 		this.city = city;
 	}
-	
-	//State 
+
+	// State
 	private String state;
-	
-	public String getState(){
+
+	public String getState() {
 		return state;
 	}
-	
-	public void setState(String state){
-		this.state= state;
+
+	public void setState(String state) {
+		this.state = state;
 	}
-	
-	//ZipCode
+
+	// ZipCode
 	private String zip;
-	
-	public String getZip(){
+
+	public String getZip() {
 		return zip;
 	}
-	
-	public void setZip(String zip){
+
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 
-	
-	//Email
+	// Email
 	private String email;
-	
-	public String getEmail(){
+
+	public String getEmail() {
 		return email;
 	}
-	
-	public void setEmail(String email){
+
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	//Phone
+
+	// Phone
 	private String phone;
-	
-	public String getPhone(){
+
+	public String getPhone() {
 		return phone;
 	}
-	
-	public void setPhone(String phone){
+
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-	//Skill
+
+	// Skill
 	private String skill;
-	
-	public String getSkill(){
+
+	public String getSkill() {
 		return skill;
 	}
-	
-	public void setSkill(String skill){
+
+	public void setSkill(String skill) {
 		this.skill = skill;
 	}
-	
-	//Cost
+
+	// Cost
 	private double cost;
-	
-	public double getCost(){
+
+	public double getCost() {
 		return cost;
 	}
 
-	public void setCost(Double cost){
+	public void setCost(Double cost) {
 		this.cost = cost;
 	}
-	
-	//password
+
+	// password
 	private String password;
-	
-	public String getPassword(){
+
+	public String getPassword() {
 		return password;
 	}
-	
-	public void setPassword(String password){
+
+	public void setPassword(String password) {
 		this.password = password;
 	}
-		
-	
-	
-	//Customer Constructor
+
+	// Customer Constructor
 	public Worker() {
-		
+
 	}
-	public Worker(String fName, String lName,String city, String state, String zip, String email, String phone, String skill, double cost, String password) {
-        System.out.println(" in worker constructor ");
+
+	public Worker(String fName, String lName, String city, String state, String zip, String email, String phone,
+			String skill, double cost, String password) {
+		System.out.println(" in worker constructor ");
 		this.firstName = fName;
 		this.lastName = lName;
 		this.city = city;
@@ -150,20 +151,20 @@ public class Worker implements Serializable, IWorker{
 		this.cost = cost;
 		this.password = password;
 	}
-	
+
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(this.firstName ).append(", ");
-		sb.append(this.lastName ).append(", ");
-		sb.append(this.city ).append(", ");
-		sb.append(this.state ).append(", ");
-		sb.append(this.zip ).append(", ");
-		sb.append(this.email ).append(", ");
-		sb.append(this.phone ).append(", ");
-		sb.append(this.skill ).append(", ");
-		sb.append(this.cost ).append(", ");
-		sb.append(this.password );
+		sb.append(this.firstName).append(", ");
+		sb.append(this.lastName).append(", ");
+		sb.append(this.city).append(", ");
+		sb.append(this.state).append(", ");
+		sb.append(this.zip).append(", ");
+		sb.append(this.email).append(", ");
+		sb.append(this.phone).append(", ");
+		sb.append(this.skill).append(", ");
+		sb.append(this.cost).append(", ");
+		sb.append(this.password);
 		return sb.toString();
 	}
-	
+
 }
