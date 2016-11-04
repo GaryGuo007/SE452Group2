@@ -58,7 +58,7 @@
 						        <th>City</th>
 						        <th>State</th>
 						        <th>Zip</th>					
-						        <th>Cost $P/H</th>
+						        <th>Cost $Person/Hour</th>
 						      </tr>
 						    </thead>
 					   		</c:if>

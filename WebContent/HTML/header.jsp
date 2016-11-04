@@ -11,25 +11,25 @@
             
                 <ul class="nav navbar-nav navbar-right custom_nav">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.jsp">About</a>
                     </li>
                     <li>
-                        <a href="search.html">Search</a>
+                        <a href="search.jsp">Search</a>
                     </li>
                    
                     <li class="dropdown custom_dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Register<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="contractor.html">Contractor</a>
+                                <a href="contractorRegistration.jsp">Contractor</a>
                             </li>
                             <li>
-                                <a href="customer.html">Customer</a>
+                                <a href="customerRegistration.jsp">Customer</a>
                             </li>
                         </ul>
                     </li>
 					 <li>
-                        <a href="login.html">Login<c:out value="${session.name }"></c:out></a> 
+                        <a href="login.jsp">Login<c:out value="${session.name }"></c:out></a> 
                     </li>
                 </ul>
             </div>
