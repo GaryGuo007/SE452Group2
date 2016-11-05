@@ -22,7 +22,7 @@ public class CustomerController {
 	@Autowired
 	private Session session;
 
-	@RequestMapping(value = "/customer")
+	@RequestMapping(value = {"/customer","/customerRegistration"} )
 	public ModelAndView customer() {
 		System.out.println("DEBUG: In CustomerController customer ");
 		Customer cust = session.getCustomer();

@@ -108,7 +108,7 @@
                     </div>
                     <div class="panel-body">
                         <p>If you are already a customer you can head to the search page and start looking for someone who meets your needs. If you are looking to register select the appropriate box on the left and right.</p>
-                        <a href="search.jsp" class="btn btn-default custom_btn">Start Search</a>
+                        <a href="search" class="btn btn-default custom_btn">Start Search</a>
                     </div>
                 </div>
             </div>
