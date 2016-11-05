@@ -48,6 +48,7 @@
                         <h4>Welcome to the Web Application for Group 2. This was created by Benjamin Conrad, Gary Guo, and Steve Nickerson.</h4><br><br>
 						<p>This application models that of a site such as Angie's List. It enables customers to sign up and search for contractors or businesses for home improvement needs. A full history is kept for each customer.</p>
 						<hr></hr>
+						<h3><a href="https://github.com/GaryGuo007/SE452Group2" style="text-decoration:none">Github Link</a></h3><br>
 												
 						<h4>Created using:</h4>
 

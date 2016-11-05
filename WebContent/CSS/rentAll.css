@@ -143,8 +143,32 @@ box-shadow: 0px 2px 2px 0px rgba(52,74,26,1);
 	background-color:#ccc;
 }
 
+.mylivechat_expanded{
+	background-color:#5C832F!important;
+	border-color:#5C832F!important;
+}
 
+.mylivechat_collapsed{
+	background-color:#5C832F!important;
+	border-color:#5C832F!important;
+}
 
+.mylivechat_offline_logo_img{
+	display:none!important;
+}
+
+.mylivechat_offline_submit_button{
+	background-color:#5C832F!important;
+	border-color:#5C832F!important;
+}
+
+.mylivechat_offline_oauth_box{
+	display:none!important;
+}
+
+.mylivechat_offline_text:before{
+	content: "This is a test feature. Currently doesn't pass any information."!important;
+}
 /* Footer Styles */
 
 .login_bg{
@@ -247,3 +271,4 @@ a{
 	text-decoration:none;
 	color:#ccc;
 }
+

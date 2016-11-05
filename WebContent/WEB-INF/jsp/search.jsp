@@ -151,7 +151,7 @@
 										<div class="input-group">
 				                    		 <span class="input-group-addon">$</span>
  										
-				                        	<form:input path="cost" type="text" id="costForm" name="form-cost" placeholder="Max Cost per Hour..." class="form-control" required="true" ></form:input>
+				                        	<form:input path="cost" type="text" id="costForm" name="form-cost" placeholder="Max Cost per Hour..." class="form-control" required="true" value="0.00"></form:input>
 				                        	 			
 				                        </div>	
 				                        <div>

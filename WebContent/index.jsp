@@ -25,7 +25,7 @@
 
 </head>
 
-<!-- This is mylivechat service-->
+<!-- This is mylivechat service placeholder. This currently doesn't provide any service -->
 <script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatbox.aspx?hccid=98908127"></script>
 
 
@@ -37,9 +37,9 @@
    
 
     <!-- Page Content -->
-			<div class="container content">
+	<div class="container content">
 			 <!-- Header Carousel -->
-    <div id="myCarousel" class="carousel slide custom_carousel">
+    <header id="myCarousel" class="carousel slide custom_carousel" style = "overflow:hidden">
  
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -51,21 +51,21 @@
         <div class="carousel-inner">
 		
             <div class="item active">
-                <div class="fill img-responsive" style="background-image:url('images/handyman.jpg');"></div>
+                <div class="fill" style="background-image:url('images/handyman.jpg');"></div>
 				
                 <div class="carousel-caption">
                    <h1>General Contracting</h1>
                 </div>
             </div>
             <div class="item">
-                <div class="fill img-responsive" style="background-image:url('images/landscape_g.jpg');"></div>
+                <div class="fill" style="background-image:url('images/landscape_g.jpg');"></div>
                 <div class="carousel-caption ">
 				
                     <h1>Lawncare</h1>
                 </div>
             </div>
             <div class="item">
-                <div class="fill img-responsive" style="background-image:url('images/plumbing.jpeg');"></div>
+                <div class="fill" style="background-image:url('images/plumbing.jpeg');"></div>
                 <div class="carousel-caption ">
                     <h1>Plumbing</h1>
                 </div>
@@ -79,7 +79,7 @@
         <a class="right carousel-control" href="#myCarousel" data-slide="next">
             <span class="icon-next"></span>
         </a>
-    </div>
+    </header>
 				
 				
 				
