@@ -44,6 +44,7 @@ public class CustomerController {
 			System.out.println("DEBUG: session cust is " + session.getCustomer());
 			customer.setId(session.getCustomer().getId());
 			session.setCustomer(customer);
+			session.setName(customer.getFirstName());
 			cs.updateCustomer(customer);
 			mav = new ModelAndView("index");
 		} else {

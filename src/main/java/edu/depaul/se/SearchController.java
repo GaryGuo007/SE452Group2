@@ -55,7 +55,7 @@ public class SearchController {
 		// Gets a list of all by profession.
 		WorkerService ws = new WorkerService();
 		List<Worker> cust = ws.getWorkerByProfession(search.getProfession());
-		if(cust==null){
+		if(cust != null){
 		for (Worker x : cust) {
 
 			// Form validation will prevent city, state, cost, and skill from
