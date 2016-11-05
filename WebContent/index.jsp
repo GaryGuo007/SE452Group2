@@ -119,7 +119,7 @@
                     </div>
                     <div class="panel-body">
                         <p>New contractor or buisness? Sign up by registering here.</p>
-                        <a href="contractorRegistration.jsp" class="btn btn-default custom_btn">Register</a>
+                        <a href="contractorRegistration" class="btn btn-default custom_btn">Register</a>
                     </div>
                 </div>
             </div>
