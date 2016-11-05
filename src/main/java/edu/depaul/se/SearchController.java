@@ -55,32 +55,34 @@ public class SearchController {
 		// Gets a list of all by profession.
 		WorkerService ws = new WorkerService();
 		List<Worker> cust = ws.getWorkerByProfession(search.getProfession());
-		if(cust != null){
-		for (Worker x : cust) {
+		if (cust != null) {
+			for (Worker x : cust) {
 
-			// Form validation will prevent city, state, cost, and skill from
-			// being null.
-			// The only check will need to be for zip in which isn't required in
-			// the cast a large city has multiple zipcodes.
+				// Form validation will prevent city, state, cost, and skill
+				// from
+				// being null.
+				// The only check will need to be for zip in which isn't
+				// required in
+				// the cast a large city has multiple zipcodes.
 
-			double tempCost = x.getCost();
-			String tempZip = x.getZip();
-			String tempSkill = x.getSkill().toLowerCase();
-			String tempCity = x.getCity().toLowerCase();
-			String tempState = x.getState().toLowerCase();
+				double tempCost = x.getCost();
+				String tempZip = x.getZip();
+				String tempSkill = x.getSkill().toLowerCase();
+				String tempCity = x.getCity().toLowerCase();
+				String tempState = x.getState().toLowerCase();
 
-			if (cost <= tempCost && tempSkill.equals(skill.toLowerCase()) && tempCity.equals(city.toLowerCase())
-					&& tempState.equals(state.toLowerCase())) {
-				if (zipcode.length() > 0) {
-					if (tempZip.equals(zipcode)) {
+				if (cost <= tempCost && tempSkill.equals(skill.toLowerCase()) && tempCity.equals(city.toLowerCase())
+						&& tempState.equals(state.toLowerCase())) {
+					if (zipcode.length() > 0) {
+						if (tempZip.equals(zipcode)) {
+							finalCust.add(x);
+						}
+					} else {
 						finalCust.add(x);
 					}
-				} else {
-					finalCust.add(x);
 				}
-			}
 
-		}
+			}
 		}
 		// Adds the final list of workers for the result page to loop through.
 		model.addAttribute("dbResults", finalCust);

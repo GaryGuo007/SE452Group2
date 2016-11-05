@@ -10,7 +10,7 @@ import edu.depaul.se.worker.jpa.WorkerService;
 
 @Controller
 public class WorkerController {
-	@RequestMapping(value = {"/contractor","contractorRegistration"})
+	@RequestMapping(value = { "/contractor", "contractorRegistration" })
 	public ModelAndView worker() {
 		System.out.println("DEBUG: In WorkerController worker ");
 		return new ModelAndView("contractorRegistration", "Worker", new Worker());
