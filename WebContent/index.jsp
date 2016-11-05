@@ -26,7 +26,7 @@
 </head>
 
 <!-- This is mylivechat service-->
-<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=98908127"></script>
+<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatbox.aspx?hccid=98908127"></script>
 
 
 <body style = "font-family: 'Montserrat', sans-serif">

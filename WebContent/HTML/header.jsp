@@ -29,7 +29,7 @@
                         </ul>
                     </li>
 					 <li>
-                        <a href="login.html">Login<c:out value="${session.name }"></c:out></a> 
+                        <a href="login.html">Login <c:out value="${session.name }"></c:out></a> 
                     </li>
                 </ul>
             </div>
