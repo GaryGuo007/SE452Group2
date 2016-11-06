@@ -75,7 +75,8 @@
 				                        <div class="form-group selectState">
 				                    
 				                        
-				                        <select class="form-control" id="state" name="state" required="true">
+				                        <select class="form-control" id="state" name="state" placeholder="State..." required="true">
+				                           		<option style="text-color:grey" value="" selected disabled>State...</option>
 				                           		<option value="AK">Alaska</option>
 												<option value="AL">Alabama</option>
 												<option value="AR">Arkansas</option>

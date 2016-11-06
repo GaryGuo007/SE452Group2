@@ -71,6 +71,7 @@
 				                        </div>
 										<div class="form-group">
 				                    		<select class="form-control" id="state" name="state" >
+												<option class="greyText" style="text-color:grey" value="" disabled selected>State...</option>
 												<option value="AK">Alaska</option>
 												<option value="AL">Alabama</option>
 												<option value="AR">Arkansas</option>

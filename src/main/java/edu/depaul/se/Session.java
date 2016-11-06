@@ -15,7 +15,7 @@ public class Session {
 	private Customer customer;
 
 	public Session() {
-		this.name = "Not logged in";
+		this.name = "/ Not logged in";
 		this.email = "";
 		this.loggedIn = false;
 		this.customer = null;

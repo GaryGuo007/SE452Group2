@@ -28,7 +28,9 @@
 </head>
 <!-- This is mylivechat service-->
 <script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=98908127"></script>
-
+<style>
+.greyText{ text-color:grey; }
+</style>
 
 <body style = "font-family: 'Montserrat', sans-serif">
 	
@@ -67,6 +69,7 @@
 				                        </div>
 										<div class="form-group">
 				                    		<select class="form-control" id="state" name="state" >
+												<option class="greyText" style="text-color:grey" value="" selected disabled>State...</option>
 												<option value="AK">Alaska</option>
 												<option value="AL">Alabama</option>
 												<option value="AR">Arkansas</option>
