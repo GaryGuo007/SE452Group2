@@ -36,7 +36,6 @@
 	 <!-- Navigation -->
 	<div id="header"></div>
 	
-   
 
 
     <!-- Page Content -->
@@ -74,9 +73,12 @@
 				                        </div>
 				                        <div class="form-group selectState">
 				                    
-				                        
+				                        <style>
+										    select:invalid { color: gray; }
+										    select:valid{color:black;}
+										</style>
 				                        <select class="form-control" id="state" name="state" placeholder="State..." required="true">
-				                           		<option style="text-color:grey" value="" selected disabled>State...</option>
+				                           		<option value="" disabled selected id="placeholder">State...</option>
 				                           		<option value="AK">Alaska</option>
 												<option value="AL">Alabama</option>
 												<option value="AR">Arkansas</option>
@@ -152,7 +154,7 @@
 										<div class="input-group">
 				                    		 <span class="input-group-addon">$</span>
  										
-				                        	<form:input path="cost" type="text" id="costForm" name="form-cost" placeholder="Max Cost per Hour..." class="form-control" required="true" value="0.00"></form:input>
+				                        	<form:input path="cost" id="costForm" name="form-cost" placeholder="Max Cost per Hour..." class="form-control"  value="0.00"></form:input>
 				                        	 			
 				                        </div>	
 				                        <div>

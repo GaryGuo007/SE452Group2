@@ -153,7 +153,7 @@ box-shadow: 0px 2px 2px 0px rgba(52,74,26,1);
 	border-color:#5C832F!important;
 }
 
-.mylivechat_offline_logo_img{
+.mylivechat_prechat_logo{
 	display:none!important;
 }
 
@@ -169,6 +169,20 @@ box-shadow: 0px 2px 2px 0px rgba(52,74,26,1);
 .mylivechat_offline_text:before{
 	content: "This is a test feature. Currently doesn't pass any information."!important;
 }
+.mylivechat_prechat_submit_button{
+	background-color:#5C832F!important;
+}
+
+
+
+select{
+    color: black;
+}
+select.unselected{
+    color: gray;
+}
+
+
 /* Footer Styles */
 
 .login_bg{

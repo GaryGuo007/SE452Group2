@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -36,7 +37,9 @@ public class SearchController {
 	public ModelAndView performSearch(@ModelAttribute("search") Search search, ModelMap model) {
 
 		System.out.println("DEBUG" + " ");
-
+				
+		
+		
 		double cost = search.getCost();
 		String skill = search.getProfession();
 		String zipcode = search.getZipcode();
@@ -44,6 +47,8 @@ public class SearchController {
 		String state = search.getState();
 		List<Worker> finalCust = new ArrayList<Worker>();
 		String error;
+		
+		
 
 		if (search.getCost() <= 0) {
 			error = "Cost must be a number great than 0.";
