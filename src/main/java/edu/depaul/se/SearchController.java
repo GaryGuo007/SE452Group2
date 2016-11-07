@@ -76,7 +76,7 @@ public class SearchController {
 				String tempCity = x.getCity().toLowerCase();
 				String tempState = x.getState().toLowerCase();
 
-				if (cost <= tempCost && tempSkill.equals(skill.toLowerCase()) && tempCity.equals(city.toLowerCase())
+				if (cost >= tempCost && tempSkill.equals(skill.toLowerCase()) && tempCity.equals(city.toLowerCase())
 						&& tempState.equals(state.toLowerCase())) {
 					if (zipcode.length() > 0) {
 						if (tempZip.equals(zipcode)) {

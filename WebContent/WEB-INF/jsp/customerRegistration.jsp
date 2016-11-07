@@ -148,9 +148,11 @@
 				                    </div>
 			                    </fieldset>
 							</form:form>
+							<c:if test="${session.isLoggedIn()}">
 							<form action="logout.html" method="post" >
 							   <input type="submit" class="btn btn-default custom_btn" name="logout" value="Log out" />
 							</form>
+							</c:if>
                         <!--<a href="index.html" class="btn btn-default custom_btn">Register</a> -->
                     </div>
                 </div>

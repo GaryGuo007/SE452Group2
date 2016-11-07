@@ -127,24 +127,36 @@
 										<div class="form-group">
 				                     
 				                        	<form:input path="zip" type="text" name="zip" placeholder="Zipcode..." class="form-control"></form:input>
-				                        </div>					
-										<div class="form-group">
-				                     
-				                        	<form:input path="cost" type="text" name="cost" placeholder="Cost per Hour..." class="form-control"></form:input>
-				                        </div>											
-										<div class="form-group">
-				                     
-				                        	<form:input path="email" type="text" name="email" placeholder="Email..." class="form-control"></form:input>
-				                        </div>	
-										<div class="form-group">
-				                     
-				                        	<form:input path="password" type="password" name="password" placeholder="Password..." class="form-control"></form:input>
 				                        </div>	
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-				                        	<textarea name="skill" placeholder="About yourself..." 
-				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
+				                     
+				                        	<form:input path="email" type="text" name="email" placeholder="Email..." class="form-control"></form:input>
+				                        </div>				
+				                        <div class="form-group">
+				                     
+				                        	<form:input path="phone" type="text" name="phone" placeholder="Phone..." class="form-control"></form:input>
+				                        </div>						
+									
+				                       	<div class="form-group">
+				                    		<select class="form-control" id="skill" name="skill">
+												<option value="General Contractor">General Contractor</option>
+												<option value="Plumber">Plumber</option>
+												<option value="Electrician">Electrician</option>
+												<option value="Landscaper">Landscaper</option>
+												<option value="Carpenter">Carpenter</option>
+												<option value="Roofer">Roofer</option>
+												<option value="Construction">Construction</option>
+										
+											</select>
 				                        </div>
+				                        	<div class="form-group">
+				                     
+				                        	<form:input path="cost" type="text" name="cost" placeholder="Cost per Hour..." class="form-control" value="0.00"></form:input>
+				                        </div>	
+				                        <div class="form-group">
+				                     
+				                        	<form:input path="password" type="password" name="password" placeholder="Password..." class="form-control"></form:input>
+				                        </div>			
 				                        <input type="submit" class="btn btn-default custom_btn" >
 										</div>
 										</fieldset>
