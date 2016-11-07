@@ -138,27 +138,39 @@
 				                     
 				                        	<form:input path="password" type="password" name="form-password" placeholder="Password..." class="form-control"></form:input>
 				                        </div>	
-		                                    <input type="submit" class="btn btn-default custom_btn" name="register" value="<c:choose>
+				                        <div class="row">
+		                                    <div class="col-md-2 ">   
+		                                       <c:if test="${session.isLoggedIn()}">                                                                
+		                                       <input type="submit" class="btn btn-default custom_btn" name="logout" value="Log out" />  
+		                                       </c:if>
+		                                    </div> 
+				                            <div class="col-md-2 col-md-offset-2">
+		                                       <input type="submit" class="btn btn-default custom_btn" <c:choose>
 		                                                                                                     <c:when test="${session.isLoggedIn()}">
-		                                                                                                          Update Info</c:when>
+		                                                                                                          name="update" value="Update Info"</c:when>
 		                                                                                                     <c:otherwise>
-		                                                                                                          Register</c:otherwise>
-		                                                                                                     </c:choose>"
-		                                                                                                  >	                        
+		                                                                                                          name="register" value="Register"</c:otherwise>
+		                                                                                               </c:choose>  />	
+		                                    </div>
+		                                    <div class="col-md-2  col-md-offset-4">  
+		                                       <c:if test="${session.isLoggedIn()}">                                                                 
+		                                       <input type="submit" class="btn btn-default custom_btn" name="delete" value="Delete" />  
+		                                       </c:if>
+		                                    </div> 
+		                                </div>                
 				                    </div>
 			                    </fieldset>
 							</form:form>
-							<c:if test="${session.isLoggedIn()}">
-							<form action="logout.html" method="post" >
-							   <input type="submit" class="btn btn-default custom_btn" name="logout" value="Log out" />
-							</form>
-							</c:if>
+<%-- 							<c:if test="${session.isLoggedIn()}"> --%>
+<%-- 							<form action="logout.html" method="post" > --%>
+<!-- 							   <input type="submit" class="btn btn-default custom_btn" name="logout" value="Log out" /> -->
+<%-- 							</form> --%>
+<%-- 							</c:if> --%>
                         <!--<a href="index.html" class="btn btn-default custom_btn">Register</a> -->
                     </div>
                 </div>
 			</div>
 		</div>
-
 	</div>
 
         <!-- Footer -->

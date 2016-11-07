@@ -38,6 +38,17 @@ public class CustomerService implements ICustomerService {
 		em.merge(cust);
 		tx.commit();
 	}
+	
+	@Override
+	public void deleteCustomer(ICustomer cust) {
+		EntityTransaction tx = em.getTransaction();
+
+		tx.begin();
+		ICustomer delCust = getCustomerInfo(cust.getId());
+		System.out.println("going to delete cust " + delCust.toString());
+		em.remove(delCust);
+		tx.commit();
+	}
 
 	@Override
 	public ICustomer getCustomerByEmail(String email) {

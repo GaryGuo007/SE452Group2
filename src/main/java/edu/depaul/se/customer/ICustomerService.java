@@ -5,8 +5,11 @@ public interface ICustomerService {
 	public void saveCustomer(ICustomer cust);
 
 	public void updateCustomer(ICustomer cust);
+	
+	public void deleteCustomer(ICustomer cust);
 
 	public ICustomer getCustomerByEmail(String email);
 
 	public ICustomer getCustomerInfo(String id);
+	
 }

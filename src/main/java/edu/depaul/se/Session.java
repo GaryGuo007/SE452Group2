@@ -39,6 +39,11 @@ public class Session {
 		// System.out.println("DEBUG: from session, setLoggedIn " +
 		// this.toString());
 		this.loggedIn = loggedIn;
+		if ( loggedIn == false ) {
+			this.customer = new Customer();
+			this.name = this.customer.getFirstName();
+			this.email = this.customer.getEmail();
+		}
 	}
 
 	public void setCustomer(Customer cust) {
